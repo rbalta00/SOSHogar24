@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SOSHogar24 — Emergencias residenciales en Puebla, respuesta en 30-60 min</title>
+<meta name="description" content="Plomería, eléctrica, techos, albañilería, pintura y herrería de emergencia en Angelópolis y zonas residenciales de Puebla. Respuesta en 30-60 minutos, 24/7. Precio claro antes de empezar.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#10213B;
+    --ink-soft:#1B3358;
+    --paper:#FBF8F3;
+    --paper-dim:#F1ECE2;
+    --amber:#E8590C;
+    --amber-soft:#FCE7D9;
+    --slate:#48566B;
+    --green:#2F6F4E;
+    --green-soft:#E4F1E9;
+    --line:#DCD4C4;
+    --white:#FFFFFF;
+    --radius:14px;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Inter', sans-serif;
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{font-family:'Space Grotesk', sans-serif; letter-spacing:-0.01em;}
+  .mono{font-family:'JetBrains Mono', monospace;}
+  a{color:inherit; text-decoration:none;}
+  img{max-width:100%; display:block;}
+  .wrap{max-width:1080px; margin:0 auto; padding:0 24px;}
+  section{padding:72px 0;}
+  @media (max-width:640px){ section{padding:48px 0;} }
+
+  /* ---------- HEADER ---------- */
+  header{
+    position:sticky; top:0; z-index:50;
+    background:rgba(251,248,243,0.92);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .header-inner{
+    max-width:1080px; margin:0 auto; padding:16px 24px;
+    display:flex; align-items:center; justify-content:space-between;
+  }
+  .logo{font-size:1.15rem; font-weight:700; display:flex; align-items:center; gap:8px;}
+  .logo .dot{width:9px; height:9px; border-radius:50%; background:var(--amber); animation:pulse 1.8s infinite;}
+  @keyframes pulse{
+    0%{box-shadow:0 0 0 0 rgba(232,89,12,0.55);}
+    70%{box-shadow:0 0 0 9px rgba(232,89,12,0);}
+    100%{box-shadow:0 0 0 0 rgba(232,89,12,0);}
+  }
+  .btn{
+    display:inline-flex; align-items:center; gap:8px;
+    font-weight:600; font-size:0.92rem;
+    padding:12px 20px; border-radius:999px;
+    border:none; cursor:pointer;
+    transition:transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .btn-primary{background:var(--amber); color:var(--white);}
+  .btn-primary:hover{transform:translateY(-1px); box-shadow:0 8px 20px rgba(232,89,12,0.35);}
+  .btn-ghost{background:transparent; color:var(--ink); border:1.5px solid var(--ink); padding:10.5px 18px;}
+  .header-inner .btn{padding:10px 16px; font-size:0.85rem;}
+
+  /* ---------- HERO ---------- */
+  .hero{padding-top:56px; padding-bottom:56px;}
+  .hero-grid{display:grid; grid-template-columns:1.1fr 0.9fr; gap:48px; align-items:center;}
+  @media (max-width:860px){ .hero-grid{grid-template-columns:1fr;} }
+  .badge-live{
+    display:inline-flex; align-items:center; gap:8px;
+    background:var(--green-soft); color:var(--green);
+    padding:7px 14px; border-radius:999px;
+    font-size:0.82rem; font-weight:600; margin-bottom:20px;
+  }
+  .badge-live .dot{width:8px; height:8px; border-radius:50%; background:var(--green); animation:pulse2 1.8s infinite;}
+  @keyframes pulse2{
+    0%{box-shadow:0 0 0 0 rgba(47,111,78,0.5);}
+    70%{box-shadow:0 0 0 8px rgba(47,111,78,0);}
+    100%{box-shadow:0 0 0 0 rgba(47,111,78,0);}
+  }
+  .hero h1{font-size:2.7rem; line-height:1.08; margin-bottom:20px;}
+  .hero h1 span{color:var(--amber);}
+  @media (max-width:640px){ .hero h1{font-size:2.05rem;} }
+  .hero p.lead{font-size:1.08rem; color:var(--slate); margin-bottom:28px; max-width:480px;}
+  .hero-ctas{display:flex; gap:12px; flex-wrap:wrap; margin-bottom:28px;}
+  .trust-row{display:flex; gap:24px; flex-wrap:wrap; font-size:0.85rem; color:var(--slate);}
+  .trust-row div{display:flex; align-items:center; gap:6px;}
+
+  .response-card{
+    background:var(--ink); color:var(--paper);
+    border-radius:20px; padding:28px;
+    position:relative; overflow:hidden;
+  }
+  .response-card::before{
+    content:""; position:absolute; top:-40%; right:-20%;
+    width:260px; height:260px; border-radius:50%;
+    background:radial-gradient(circle, rgba(232,89,12,0.25), transparent 70%);
+  }
+  .response-card .label{font-size:0.78rem; text-transform:uppercase; letter-spacing:0.08em; color:#9FB0C9; margin-bottom:6px;}
+  .response-card .time{font-size:3.2rem; font-weight:700; font-family:'Space Grotesk', sans-serif; line-height:1; margin-bottom:4px;}
+  .response-card .time span{font-size:1.1rem; font-weight:500; color:#9FB0C9;}
+  .response-card .sub{font-size:0.9rem; color:#C7D2E3; margin-bottom:20px;}
+  .response-card .services{display:flex; flex-wrap:wrap; gap:8px; position:relative; z-index:1;}
+  .response-card .services span{
+    background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.14);
+    padding:6px 12px; border-radius:999px; font-size:0.78rem;
+  }
+
+  /* ---------- EMERGENCIAS GRID ---------- */
+  .eyebrow{
+    font-family:'JetBrains Mono', monospace; font-size:0.78rem;
+    text-transform:uppercase; letter-spacing:0.1em; color:var(--amber);
+    margin-bottom:10px; font-weight:700;
+  }
+  .section-head{max-width:560px; margin-bottom:40px;}
+  .section-head h2{font-size:1.9rem; margin-bottom:12px;}
+  .section-head p{color:var(--slate);}
+
+  .em-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:16px;}
+  @media (max-width:860px){ .em-grid{grid-template-columns:repeat(2,1fr);} }
+  @media (max-width:480px){ .em-grid{grid-template-columns:1fr;} }
+  .em-card{
+    background:var(--white); border:1px solid var(--line); border-radius:var(--radius);
+    padding:20px; transition:border-color 0.15s ease, transform 0.15s ease;
+  }
+  .em-card:hover{border-color:var(--amber); transform:translateY(-2px);}
+  .em-card .icon{
+    width:38px; height:38px; border-radius:10px; background:var(--amber-soft);
+    display:flex; align-items:center; justify-content:center; margin-bottom:14px;
+  }
+  .em-card .icon svg{width:19px; height:19px; stroke:var(--amber);}
+  .em-card p{font-size:0.92rem; font-weight:600; line-height:1.35;}
+
+  /* ---------- FEATURES GRID ---------- */
+  .feat-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:20px;}
+  @media (max-width:860px){ .feat-grid{grid-template-columns:1fr 1fr;} }
+  @media (max-width:480px){ .feat-grid{grid-template-columns:1fr;} }
+  .feat-card{
+    background:var(--white); border:1px solid var(--line); border-radius:var(--radius);
+    padding:24px;
+  }
+  .feat-card .icon{
+    width:42px; height:42px; border-radius:11px; background:var(--green-soft);
+    display:flex; align-items:center; justify-content:center; margin-bottom:16px;
+  }
+  .feat-card .icon svg{width:21px; height:21px; stroke:var(--green);}
+  .feat-card h4{font-size:1rem; margin-bottom:6px;}
+  .feat-card p{font-size:0.87rem; color:var(--slate);}
+
+  /* ---------- 24/7 BANNER ---------- */
+  .banner-247{
+    background:var(--amber); color:var(--white); border-radius:20px;
+    padding:36px 40px; display:flex; align-items:center; justify-content:space-between;
+    gap:24px; flex-wrap:wrap;
+  }
+  .banner-247 .left{display:flex; align-items:center; gap:18px;}
+  .banner-247 .num{font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:2.6rem; line-height:1;}
+  .banner-247 .num span{display:block; font-size:0.7rem; font-weight:600; text-transform:uppercase; letter-spacing:0.08em; font-family:'Inter',sans-serif; margin-top:2px;}
+  .banner-247 p{font-size:0.95rem; max-width:340px;}
+  .banner-247 .btn-ghost{border-color:var(--white); color:var(--white);}
+
+  /* ---------- PRICING (RECIBO) ---------- */
+  .pricing-wrap{display:grid; grid-template-columns:1fr 1fr; gap:32px; align-items:start;}
+  @media (max-width:860px){ .pricing-wrap{grid-template-columns:1fr;} }
+
+  .receipt{
+    background:var(--white); border:1px solid var(--line); border-radius:var(--radius);
+    padding:28px; font-family:'JetBrains Mono', monospace;
+    box-shadow:0 12px 30px rgba(16,33,59,0.06);
+  }
+  .receipt-head{display:flex; justify-content:space-between; align-items:baseline; border-bottom:2px dashed var(--line); padding-bottom:14px; margin-bottom:14px;}
+  .receipt-head span{font-size:0.72rem; color:var(--slate);}
+  .receipt-row{display:flex; justify-content:space-between; padding:11px 0; border-bottom:1px dashed var(--line); font-size:0.88rem;}
+  .receipt-row:last-child{border-bottom:none;}
+  .receipt-row .name{color:var(--ink); font-weight:500;}
+  .receipt-row .price{color:var(--amber); font-weight:700;}
+  .receipt-note{margin-top:16px; font-size:0.75rem; color:var(--slate); font-family:'Inter',sans-serif;}
+
+  .tier-cards{display:flex; flex-direction:column; gap:14px;}
+  .tier-card{
+    background:var(--white); border:1px solid var(--line); border-radius:var(--radius);
+    padding:20px 22px; display:flex; justify-content:space-between; align-items:center; gap:16px;
+  }
+  .tier-card.highlight{border-color:var(--amber); background:var(--amber-soft);}
+  .tier-card h4{font-size:0.98rem; margin-bottom:4px;}
+  .tier-card p{font-size:0.82rem; color:var(--slate);}
+  .tier-card .tag{
+    font-family:'JetBrains Mono', monospace; font-size:0.8rem; font-weight:700;
+    background:var(--ink); color:var(--paper); padding:6px 12px; border-radius:8px; white-space:nowrap;
+  }
+  .tier-card.highlight .tag{background:var(--amber);}
+
+  /* ---------- TRUST BLOCK ---------- */
+  .trust-block{
+    background:var(--ink); color:var(--paper); border-radius:20px;
+    padding:44px; display:grid; grid-template-columns:auto 1fr; gap:24px; align-items:center;
+  }
+  @media (max-width:640px){ .trust-block{grid-template-columns:1fr; text-align:center; padding:32px 24px;} }
+  .trust-block .shield{
+    width:56px; height:56px; border-radius:14px; background:rgba(255,255,255,0.08);
+    display:flex; align-items:center; justify-content:center; flex-shrink:0;
+  }
+  @media (max-width:640px){ .trust-block .shield{margin:0 auto;} }
+  .trust-block .shield svg{width:28px; height:28px; stroke:var(--amber);}
+  .trust-block h3{font-size:1.35rem; margin-bottom:8px;}
+  .trust-block p{color:#C7D2E3; font-size:0.95rem;}
+
+  /* ---------- PROCESO ---------- */
+  .process-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:20px;}
+  @media (max-width:860px){ .process-grid{grid-template-columns:repeat(2,1fr);} }
+  @media (max-width:480px){ .process-grid{grid-template-columns:1fr;} }
+  .process-step{position:relative; padding-top:8px;}
+  .process-step .num{
+    font-family:'JetBrains Mono', monospace; font-weight:700; color:var(--amber);
+    font-size:0.85rem; margin-bottom:10px; display:block;
+  }
+  .process-step h4{font-size:1rem; margin-bottom:6px;}
+  .process-step p{font-size:0.85rem; color:var(--slate);}
+
+  /* ---------- TECNICO ---------- */
+  .tech-card{
+    display:grid; grid-template-columns:auto 1fr; gap:28px; align-items:center;
+    background:var(--white); border:1px solid var(--line); border-radius:20px; padding:32px;
+  }
+  @media (max-width:640px){ .tech-card{grid-template-columns:1fr; text-align:center;} }
+  .tech-avatar{
+    width:96px; height:96px; border-radius:50%; background:var(--ink);
+    display:flex; align-items:center; justify-content:center; color:var(--paper);
+    font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:1.6rem;
+    flex-shrink:0;
+  }
+  @media (max-width:640px){ .tech-avatar{margin:0 auto;} }
+  .tech-card h3{font-size:1.2rem; margin-bottom:4px;}
+  .tech-card .role{color:var(--amber); font-weight:600; font-size:0.88rem; margin-bottom:10px;}
+  .tech-card p{color:var(--slate); font-size:0.92rem;}
+
+  /* ---------- TESTIMONIAL ---------- */
+  .testi-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:20px; max-width:980px; margin:0 auto;}
+  @media (max-width:860px){ .testi-grid{grid-template-columns:1fr;} }
+  .testimonial{
+    background:var(--paper-dim); border-radius:20px; padding:32px 28px;
+    text-align:left;
+  }
+  .testimonial .stars{color:var(--amber); font-size:1rem; margin-bottom:14px; letter-spacing:2px;}
+  .testimonial p.quote{font-size:0.98rem; font-family:'Space Grotesk', sans-serif; line-height:1.5; margin-bottom:16px;}
+  .testimonial .author{font-size:0.82rem; color:var(--slate); font-weight:600;}
+
+  /* ---------- CTA FINAL ---------- */
+  .final-cta{
+    background:linear-gradient(135deg, var(--ink) 0%, var(--ink-soft) 100%);
+    color:var(--paper); border-radius:24px; padding:56px 40px; text-align:center;
+    position:relative; overflow:hidden;
+  }
+  .final-cta::before{
+    content:""; position:absolute; bottom:-30%; left:50%; transform:translateX(-50%);
+    width:420px; height:420px; border-radius:50%;
+    background:radial-gradient(circle, rgba(232,89,12,0.28), transparent 70%);
+  }
+  .final-cta > *{position:relative; z-index:1;}
+  .offer-pill{
+    display:inline-flex; align-items:center; gap:8px;
+    background:var(--amber); color:var(--white); font-weight:700; font-size:0.85rem;
+    padding:9px 18px; border-radius:999px; margin-bottom:20px;
+  }
+  .final-cta h2{font-size:2rem; margin-bottom:14px;}
+  .final-cta p{color:#C7D2E3; margin-bottom:28px; max-width:480px; margin-left:auto; margin-right:auto;}
+  .final-cta .btn-primary{font-size:1rem; padding:16px 32px;}
+  .final-cta .phone-mono{margin-top:18px; font-size:0.85rem; color:#9FB0C9;}
+
+  /* ---------- COBERTURA ---------- */
+  .coverage-box{
+    background:var(--white); border:1px solid var(--line); border-radius:20px;
+    padding:36px;
+  }
+  .coverage-box .zones{display:flex; flex-wrap:wrap; gap:10px; margin-top:20px;}
+  .coverage-box .zone-tag{
+    display:inline-flex; align-items:center; gap:6px;
+    background:var(--paper-dim); border:1px solid var(--line);
+    padding:9px 16px; border-radius:999px; font-size:0.85rem; font-weight:500;
+  }
+  .coverage-box .zone-tag.core{background:var(--amber-soft); border-color:var(--amber); color:var(--amber); font-weight:700;}
+  .coverage-box .zone-tag svg{width:13px; height:13px; stroke:var(--amber); flex-shrink:0;}
+  .coverage-box .route-note{margin-top:20px; font-size:0.85rem; color:var(--slate); display:flex; gap:8px; align-items:flex-start;}
+  .coverage-box .route-note svg{width:16px; height:16px; stroke:var(--slate); flex-shrink:0; margin-top:2px;}
+
+  /* ---------- MAP ---------- */
+  .map-wrap{border-radius:20px; overflow:hidden; border:1px solid var(--line); margin-top:20px;}
+  .map-wrap iframe{width:100%; height:320px; border:0; display:block;}
+
+  /* ---------- FAQ ---------- */
+  .faq-list{max-width:720px; margin:0 auto; display:flex; flex-direction:column; gap:12px;}
+  .faq-item{
+    background:var(--white); border:1px solid var(--line); border-radius:var(--radius);
+    overflow:hidden;
+  }
+  .faq-q{
+    display:flex; justify-content:space-between; align-items:center; gap:16px;
+    padding:18px 22px; cursor:pointer; font-weight:600; font-size:0.95rem;
+  }
+  .faq-q .plus{
+    font-family:'JetBrains Mono', monospace; font-size:1.1rem; color:var(--amber);
+    flex-shrink:0; transition:transform 0.2s ease;
+  }
+  .faq-item.open .faq-q .plus{transform:rotate(45deg);}
+  .faq-a{
+    max-height:0; overflow:hidden; transition:max-height 0.25s ease;
+    padding:0 22px;
+  }
+  .faq-item.open .faq-a{max-height:220px; padding:0 22px 18px;}
+  .faq-a p{font-size:0.88rem; color:var(--slate); line-height:1.6;}
+
+  /* ---------- GALLERY ---------- */
+  .gallery-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:14px;}
+  @media (max-width:860px){ .gallery-grid{grid-template-columns:repeat(2,1fr);} }
+  .gallery-item{
+    aspect-ratio:4/3; border-radius:var(--radius); overflow:hidden;
+    background:var(--paper-dim); border:1px solid var(--line);
+    position:relative;
+  }
+  .gallery-item img{width:100%; height:100%; object-fit:cover; transition:transform 0.3s ease;}
+  .gallery-item:hover img{transform:scale(1.06);}
+
+  /* ---------- LEGAL / FOOTER ---------- */
+  footer{padding:40px 0 28px;}
+  .footer-grid{display:grid; grid-template-columns:1.4fr 1fr 1fr; gap:32px; margin-bottom:28px;}
+  @media (max-width:640px){ .footer-grid{grid-template-columns:1fr; text-align:left;} }
+  .footer-grid h5{font-size:0.82rem; margin-bottom:12px; font-family:'Space Grotesk',sans-serif;}
+  .footer-grid p, .footer-grid a{font-size:0.82rem; color:var(--slate); display:block; margin-bottom:8px;}
+  .footer-grid a:hover{color:var(--amber);}
+  .footer-bottom{
+    border-top:1px solid var(--line); padding-top:20px;
+    display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px;
+    font-size:0.78rem; color:var(--slate);
+  }
+  .legal-links{display:flex; gap:16px; flex-wrap:wrap;}
+
+  .legal-modal{
+    display:none; position:fixed; inset:0; z-index:100;
+    background:rgba(16,33,59,0.55); align-items:center; justify-content:center; padding:20px;
+  }
+  .legal-modal.open{display:flex;}
+  .legal-modal .box{
+    background:var(--white); border-radius:16px; padding:32px;
+    max-width:560px; max-height:80vh; overflow-y:auto;
+  }
+  .legal-modal h3{font-size:1.15rem; margin-bottom:14px;}
+  .legal-modal p{font-size:0.87rem; color:var(--slate); margin-bottom:12px; line-height:1.6;}
+  .legal-modal .close{
+    display:inline-block; margin-top:10px; cursor:pointer; font-weight:600;
+    color:var(--amber); font-size:0.85rem;
+  }
+
+  /* Floating WhatsApp button (mobile) */
+  .float-wa{
+    position:fixed; bottom:20px; right:20px; z-index:60;
+    background:var(--amber); color:var(--white);
+    width:58px; height:58px; border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    box-shadow:0 10px 24px rgba(232,89,12,0.4);
+  }
+  .float-wa svg{width:26px; height:26px;}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="logo"><span class="dot"></span> SOSHogar24</div>
+    <a class="btn btn-primary" href="https://wa.me/522226274960?text=Hola%2C%20tengo%20una%20emergencia%20en%20casa" target="_blank" rel="noopener">WhatsApp ahora</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="badge-live"><span class="dot"></span> Disponible ahora · Respuesta en 30–60 min</div>
+      <h1>Tu casa tiene una emergencia.<br>Nosotros <span>la respuesta.</span></h1>
+      <p class="lead">Plomería, eléctrica, techos, albañilería, pintura y herrería — atención 24/7 en Angelópolis y zonas residenciales de Puebla. Precio claro antes de empezar, sin sorpresas.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-primary" href="https://wa.me/522226274960?text=Hola%2C%20tengo%20una%20emergencia%20en%20casa" target="_blank" rel="noopener">
+          Escríbenos por WhatsApp
+        </a>
+        <a class="btn btn-ghost" href="tel:2226274960">Llamar ahora</a>
+      </div>
+      <div class="trust-row">
+        <div>✓ 20 años de experiencia</div>
+        <div>✓ Diagnóstico gratuito</div>
+        <div>✓ Sin cobros sorpresa</div>
+      </div>
+    </div>
+    <div class="response-card">
+      <div class="label">Tiempo de respuesta</div>
+      <div class="time">30–60<span> min</span></div>
+      <div class="sub">Técnico en tu domicilio, todos los días del año</div>
+      <div class="services">
+        <span>Plomería</span><span>Eléctrica</span><span>Techos</span>
+        <span>Albañilería</span><span>Pintura</span><span>Herrería</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="emergencias">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Reconoces esto</div>
+      <h2>Las emergencias más comunes que resolvemos</h2>
+      <p>Si te está pasando algo de esto ahora mismo, es justo lo que atendemos en la primera visita.</p>
+    </div>
+    <div class="em-grid">
+
+      <div class="em-card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c3 4 6 7 6 11a6 6 0 0 1-12 0c0-4 3-7 6-11z"/></svg></div>
+        <p>Tubería reventada o fuga que no puedes cerrar</p>
+      </div>
+
+      <div class="em-card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h7l-1 8 11-14h-7l1-6z"/></svg></div>
+        <p>Corto circuito o apagón total en la casa</p>
+      </div>
+
+      <div class="em-card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 13c1 2 2 3 4 3s3-1 4-3"/></svg></div>
+        <p>Baño tapado o desbordado</p>
+      </div>
+
+      <div class="em-card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c4 0 7-3 7-6 0-4-7-12-7-12s-7 8-7 12c0 3 3 6 7 6z"/></svg></div>
+        <p>Boiler sin funcionar — agua fría todo el día</p>
+      </div>
+
+      <div class="em-card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12l9-8 9 8"/><path d="M5 10v10h14V10"/><path d="M9 20v-4h6v4"/></svg></div>
+        <p>Gotera o filtración de agua en el techo</p>
+      </div>
+
+      <div class="em-card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M7 12h10"/></svg></div>
+        <p>Contacto o apagador quemado / chispeando</p>
+      </div>
+
+      <div class="em-card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+        <p>Chapa o portón que no cierra (seguridad)</p>
+      </div>
+
+      <div class="em-card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"/></svg></div>
+        <p>Fuga oculta o aumento sospechoso en el recibo de agua</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="por-que-elegirnos">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Por qué SOSHogar24</div>
+      <h2>Lo que nos diferencia en Angelópolis</h2>
+    </div>
+    <div class="feat-grid">
+      <div class="feat-card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+        <h4>Respuesta en 30–60 min</h4>
+        <p>Técnico en tu domicilio antes de que el problema empeore, cualquier día del año</p>
+      </div>
+      <div class="feat-card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.4 8.7 8 10 4.6-1.3 8-5 8-10V6l-8-4z"/></svg></div>
+        <h4>Precio por escrito, antes de empezar</h4>
+        <p>Sin cobros sorpresa: apruebas el presupuesto antes de cualquier reparación</p>
+      </div>
+      <div class="feat-card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21c4-3 8-6.5 8-11a8 8 0 0 0-16 0c0 4.5 4 8 8 11z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <h4>Enfocados en tu zona</h4>
+        <p>Corredor Periférico Ecológico: Angelópolis, Lomas de Angelópolis, Cholula y Cuautlancingo</p>
+      </div>
+      <div class="feat-card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 12 2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg></div>
+        <h4>20 años de experiencia</h4>
+        <p>Al mando de Rodolfo Serrano, técnico responsable de cada servicio</p>
+      </div>
+      <div class="feat-card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M4 9h16"/></svg></div>
+        <h4>6 especialidades, un solo contacto</h4>
+        <p>Plomería, eléctrica, techos, albañilería, pintura y herrería</p>
+      </div>
+      <div class="feat-card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+        <h4>Contacto directo por WhatsApp</h4>
+        <p>Sin formularios largos ni esperar una llamada — respondemos al instante</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="banner-247">
+      <div class="left">
+        <div class="num">24<span>Horas</span></div>
+        <div class="num">/7<span>Días</span></div>
+      </div>
+      <p>Las emergencias no avisan. Por eso SOSHogar24 atiende de noche, fines de semana y días festivos, sin recargos ocultos.</p>
+      <a class="btn btn-ghost" href="https://wa.me/522226274960?text=Hola%2C%20tengo%20una%20emergencia%20en%20casa" target="_blank" rel="noopener">Escribir ahora</a>
+    </div>
+  </div>
+</section>
+
+<section id="galeria">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Trabajo real, no imágenes de stock</div>
+      <h2>Trabajos recientes de SOSHogar24</h2>
+      <p>Así se ve nuestro equipo resolviendo eléctrica, techos, pintura y albañilería en campo.</p>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item"><img src="assets/electrica-1.jpeg" alt="Instalación eléctrica — cableado en obra"></div>
+      <div class="gallery-item"><img src="assets/electrica-2.jpeg" alt="Detalle de conexión eléctrica en medidor"></div>
+      <div class="gallery-item"><img src="assets/techo-1.jpeg" alt="Impermeabilización de techo — acabado en teja"></div>
+      <div class="gallery-item"><img src="assets/techo-2.jpeg" alt="Técnico aplicando impermeabilizante en azotea"></div>
+      <div class="gallery-item"><img src="assets/pintura-1.jpeg" alt="Equipo pintando fachada residencial"></div>
+      <div class="gallery-item"><img src="assets/pintura-2.jpeg" alt="Técnico dando acabado de pintura en fachada"></div>
+      <div class="gallery-item"><img src="assets/albanileria-1.jpeg" alt="Trabajo de albañilería — resane de muro interior"></div>
+      <div class="gallery-item"><img src="assets/albanileria-2.jpeg" alt="Equipo reparando banqueta y línea de instalación"></div>
+    </div>
+  </div>
+</section>
+
+<section id="precios" style="background:var(--paper-dim);">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Precio claro, sin letras chiquitas</div>
+      <h2>Sabes cuánto vas a pagar antes de que lleguemos</h2>
+      <p>Diagnóstico gratuito, presupuesto por escrito antes de iniciar cualquier reparación. Tú decides si continuamos.</p>
+    </div>
+
+    <div class="pricing-wrap">
+      <div class="receipt">
+        <div class="receipt-head">
+          <strong>SOSHOGAR24</strong>
+          <span>TARIFA · VISITA</span>
+        </div>
+        <div class="receipt-row"><span class="name">Diagnóstico</span><span class="price">$0</span></div>
+        <div class="receipt-row"><span class="name">Horario normal (L–V 8am–8pm)</span><span class="price">$350–500/h</span></div>
+        <div class="receipt-row"><span class="name">Fin de semana</span><span class="price">$450–650/h</span></div>
+        <div class="receipt-row"><span class="name">Nocturno / festivo</span><span class="price">$600–900/h</span></div>
+        <div class="receipt-note">* Tarifa de visita cubre diagnóstico + contención inmediata del problema. Materiales y alcance mayor se cotizan por escrito antes de continuar.</div>
+      </div>
+
+      <div class="tier-cards">
+        <div class="tier-card">
+          <div><h4>Diagnóstico gratuito</h4><p>Evaluamos el problema y te damos precio fijo antes de tocar nada</p></div>
+          <span class="tag">$0</span>
+        </div>
+        <div class="tier-card highlight">
+          <div><h4>Reparación estándar</h4><p>Fugas menores, destapes, contactos, boiler — lo más común</p></div>
+          <span class="tag">$600–1,800</span>
+        </div>
+        <div class="tier-card">
+          <div><h4>Reparación completa</h4><p>Tramos de tubería, instalaciones mayores, impermeabilización</p></div>
+          <span class="tag">Desde $3,000</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="trust-block">
+      <div class="shield"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.4 8.7 8 10 4.6-1.3 8-5 8-10V6l-8-4z"/><path d="m9 12 2 2 4-4"/></svg></div>
+      <div>
+        <h3>Nunca cobros sorpresa</h3>
+        <p>La tarifa de emergencia cubre el diagnóstico y la contención inmediata del problema. Si la reparación requiere mayor alcance, te mostramos el nuevo presupuesto antes de continuar — tú decides. Nada se cobra sin tu autorización.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="proceso">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Así funciona</div>
+      <h2>De tu mensaje a la solución</h2>
+    </div>
+    <div class="process-grid">
+      <div class="process-step">
+        <span class="num">01</span>
+        <h4>Escríbenos</h4>
+        <p>Por WhatsApp o llamada, cuéntanos qué pasa</p>
+      </div>
+      <div class="process-step">
+        <span class="num">02</span>
+        <h4>Confirmamos</h4>
+        <p>Te decimos hora estimada de llegada, sin espera indefinida</p>
+      </div>
+      <div class="process-step">
+        <span class="num">03</span>
+        <h4>Diagnosticamos</h4>
+        <p>Evaluamos en sitio y te damos el precio por escrito</p>
+      </div>
+      <div class="process-step">
+        <span class="num">04</span>
+        <h4>Resolvemos</h4>
+        <p>Reparamos con garantía, tú apruebas antes de pagar</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--paper-dim);">
+  <div class="wrap">
+    <div class="tech-card">
+      <div class="tech-avatar">RS</div>
+      <div>
+        <h3>Rodolfo Serrano</h3>
+        <div class="role">Técnico responsable · 20 años de experiencia</div>
+        <p>Al frente de cada servicio de SOSHogar24, con dos décadas resolviendo emergencias residenciales en Puebla — de fugas nocturnas a fallas eléctricas en plena reunión familiar.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" style="margin-left:auto; margin-right:auto; text-align:center;">
+      <div class="eyebrow">Lo que dicen nuestros clientes</div>
+      <h2>Confianza real, en su zona</h2>
+    </div>
+    <div class="testi-grid">
+
+      <div class="testimonial">
+        <div class="stars">★★★★★</div>
+        <p class="quote">"Se reventó una tubería un domingo en la noche y en menos de una hora ya tenían a alguien en la puerta. Nos dijeron el precio antes de tocar nada — eso fue lo que más se agradeció."</p>
+        <div class="author">María Fernanda R. — Lomas de Angelópolis</div>
+      </div>
+
+      <div class="testimonial">
+        <div class="stars">★★★★★</div>
+        <p class="quote">"Se fue la luz de toda la casa un viernes en la noche y en menos de 40 minutos ya tenía al técnico revisando el cuadro eléctrico. Muy profesionales y puntuales."</p>
+        <div class="author">Jorge A. — Privada La Vista</div>
+      </div>
+
+      <div class="testimonial">
+        <div class="stars">★★★★★</div>
+        <p class="quote">"Contraté el diagnóstico gratis para una gotera en el techo y terminé haciendo la impermeabilización completa. El precio se cumplió tal cual como me lo dijeron, sin sorpresas."</p>
+        <div class="author">Claudia P. — Zavaleta</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="faq" style="background:var(--paper-dim);">
+  <div class="wrap">
+    <div class="section-head" style="margin-left:auto; margin-right:auto; text-align:center;">
+      <div class="eyebrow">Antes de escribirnos</div>
+      <h2>Preguntas frecuentes</h2>
+    </div>
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+          ¿Realmente llegan en 30-60 minutos?
+          <span class="plus">+</span>
+        </div>
+        <div class="faq-a"><p>Sí, ese es nuestro tiempo estándar de respuesta dentro de Angelópolis y zonas residenciales cercanas. Puede variar ligeramente según tráfico o disponibilidad de técnicos en horas pico, pero siempre te confirmamos una hora estimada apenas escribes.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+          ¿El diagnóstico realmente es gratis?
+          <span class="plus">+</span>
+        </div>
+        <div class="faq-a"><p>Sí. La visita de diagnóstico no tiene costo. Solo pagas si decides continuar con la reparación, y siempre te mostramos el precio por escrito antes de iniciar.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+          ¿Qué pasa si el problema es más grande de lo esperado?
+          <span class="plus">+</span>
+        </div>
+        <div class="faq-a"><p>Primero contenemos el daño activo (por ejemplo, cerramos una fuga). Después te mostramos el nuevo presupuesto con fotos y explicación clara. Nunca continuamos ni cobramos de más sin tu autorización.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+          ¿Atienden de verdad los 365 días, incluidas noches y festivos?
+          <span class="plus">+</span>
+        </div>
+        <div class="faq-a"><p>Sí, SOSHogar24 opera 24/7 todo el año. El horario nocturno y de fin de semana tiene una tarifa distinta (ver sección de precios), pero nunca dejamos de atender.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+          ¿Qué formas de pago aceptan?
+          <span class="plus">+</span>
+        </div>
+        <div class="faq-a"><p>Aceptamos efectivo y transferencia. Confirma el método disponible directamente con el técnico al momento de la visita.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+          ¿Cubren toda la ciudad de Puebla?
+          <span class="plus">+</span>
+        </div>
+        <div class="faq-a"><p>Nuestro tiempo de respuesta garantizado de 30-60 min cubre todo el corredor del Periférico Ecológico: desde 14 Sur, Jardines de la Montaña y San Baltazar Campeche, pasando por Angelópolis / Atlixcáyotl y Ciudad Judicial / Lomas de Angelópolis, hasta la Recta a Cholula y Cuautlancingo. Para otras zonas de Puebla, escríbenos y confirmamos disponibilidad y tiempo estimado.</p></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="contacto">
+  <div class="wrap">
+    <div class="final-cta">
+      <div class="offer-pill">🎁 Oferta de bienvenida</div>
+      <h2>Diagnóstico gratis + 10% de descuento en tu primer servicio</h2>
+      <p>Escríbenos ahora por WhatsApp y un técnico llega en 30–60 minutos. Sin compromiso, sin cobros ocultos.</p>
+      <a class="btn btn-primary" href="https://wa.me/522226274960?text=Hola%2C%20tengo%20una%20emergencia%20en%20casa" target="_blank" rel="noopener">Escríbenos por WhatsApp</a>
+      <div class="phone-mono mono">O llama al 222 627 4960 · Disponible 24/7</div>
+    </div>
+    <div class="map-wrap">
+      <iframe src="https://maps.google.com/maps?q=18.977456,-98.270549&hl=es&z=16&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Ubicación SOSHogar24" style="min-height:320px; background:var(--paper-dim);"></iframe>
+    </div>
+    <a href="https://maps.app.goo.gl/dj2vm8yEpjUh6Epw5" target="_blank" rel="noopener" class="mono" style="display:block; text-align:center; margin-top:12px; font-size:0.8rem; color:var(--amber); font-weight:600;">
+      📍 Calle 23 Sur #14139, San Isidro Castillotla — Ver en Google Maps →
+    </a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <h5>SOSHogar24</h5>
+        <p>Emergencias residenciales 24/7 en Angelópolis y zonas privadas de Puebla. Plomería, eléctrica, techos, albañilería, pintura y herrería.</p>
+      </div>
+      <div>
+        <h5>Contacto</h5>
+        <a href="https://wa.me/522226274960" target="_blank" rel="noopener">WhatsApp: 222 627 4960</a>
+        <a href="tel:2226274960">Llamar: 222 627 4960</a>
+        <p>Calle 23 Sur #14139, San Isidro Castillotla, Puebla, Pue.</p>
+      </div>
+      <div>
+        <h5>Legal</h5>
+        <a href="#" onclick="document.getElementById('modal-privacidad').classList.add('open'); return false;">Aviso de Privacidad</a>
+        <a href="#" onclick="document.getElementById('modal-terminos').classList.add('open'); return false;">Términos del servicio</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 SOSHogar24 — Todos los derechos reservados</span>
+      <div class="legal-links">
+        <span>Servicio operado en Puebla, México</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Modal: Aviso de Privacidad -->
+<div class="legal-modal" id="modal-privacidad">
+  <div class="box">
+    <h3>Aviso de Privacidad</h3>
+    <p><strong>SOSHogar24</strong>, con domicilio de operación en Calle 23 Sur #14139, San Isidro Castillotla, Puebla, Pue., es responsable del uso y protección de tus datos personales, en cumplimiento con la Ley Federal de Protección de Datos Personales en Posesión de los Particulares.</p>
+    <p><strong>Datos que recabamos:</strong> nombre, número de teléfono/WhatsApp y dirección del domicilio donde se solicita el servicio, únicamente para efectos de contacto, cotización y prestación del servicio contratado.</p>
+    <p><strong>Uso de tus datos:</strong> contactarte para confirmar tu solicitud de servicio, coordinar la visita técnica, enviarte el presupuesto correspondiente y, si lo autorizas expresamente, informarte sobre promociones futuras.</p>
+    <p><strong>No compartimos</strong> tus datos personales con terceros ajenos a la prestación directa del servicio, salvo obligación legal.</p>
+    <p><strong>Derechos ARCO:</strong> puedes solicitar acceder, rectificar, cancelar u oponerte al uso de tus datos personales escribiendo directamente al WhatsApp de contacto de SOSHogar24.</p>
+    <p>Este aviso puede actualizarse; la versión vigente estará siempre disponible en esta página.</p>
+    <span class="close" onclick="document.getElementById('modal-privacidad').classList.remove('open')">Cerrar</span>
+  </div>
+</div>
+
+<!-- Modal: Términos del servicio -->
+<div class="legal-modal" id="modal-terminos">
+  <div class="box">
+    <h3>Términos del servicio</h3>
+    <p><strong>Diagnóstico y presupuesto:</strong> la visita de diagnóstico es gratuita. El presupuesto de reparación se entrega por escrito (WhatsApp) antes de iniciar cualquier trabajo y requiere tu autorización expresa para proceder.</p>
+    <p><strong>Tarifas de emergencia:</strong> las tarifas mostradas en esta página son de referencia y pueden variar según horario, día de la semana, complejidad del problema y materiales requeridos. El precio final siempre se confirma antes de ejecutar el trabajo.</p>
+    <p><strong>Sin cobros sorpresa:</strong> si durante el diagnóstico se detecta que el alcance del trabajo es mayor al estimado inicialmente, se te presentará el nuevo presupuesto antes de continuar. No se realizará ningún cargo adicional sin tu aprobación.</p>
+    <p><strong>Garantía:</strong> los trabajos realizados cuentan con garantía sobre la mano de obra; el periodo específico se indica en tu comprobante de servicio.</p>
+    <p><strong>Cancelaciones:</strong> puedes cancelar la visita sin costo antes de que el técnico sea despachado. Si el técnico ya se encuentra en camino, puede aplicar un cargo por desplazamiento.</p>
+    <p><strong>Oferta de bienvenida:</strong> el descuento de bienvenida aplica una vez por domicilio y no es acumulable con otras promociones.</p>
+    <span class="close" onclick="document.getElementById('modal-terminos').classList.remove('open')">Cerrar</span>
+  </div>
+</div>
+
+<a class="float-wa" href="https://wa.me/522226274960?text=Hola%2C%20tengo%20una%20emergencia%20en%20casa" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.7.44 3.36 1.29 4.83L2.05 22l5.42-1.42a9.87 9.87 0 0 0 4.57 1.16h.01c5.46 0 9.9-4.45 9.9-9.91C21.96 6.45 17.5 2 12.04 2zm0 18.15h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.11.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.55 3.7-8.25 8.26-8.25a8.2 8.2 0 0 1 5.84 2.42 8.18 8.18 0 0 1 2.41 5.83c0 4.55-3.71 8.24-8.27 8.24zm4.53-6.18c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.17.24-.64.81-.78.97-.14.17-.29.19-.53.06-.25-.12-1.04-.38-1.98-1.22-.73-.65-1.23-1.46-1.37-1.7-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.43-.14-.01-.31-.01-.48-.01a.9.9 0 0 0-.66.31c-.23.24-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.68 4.25 3.75.59.26 1.06.41 1.42.53.6.19 1.14.16 1.57.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.08.14-1.18-.06-.11-.23-.17-.48-.29z"/></svg>
+</a>
+
+</body>
+</html>
