@@ -367,6 +367,38 @@
     box-shadow:0 10px 24px rgba(232,89,12,0.4);
   }
   .float-wa svg{width:26px; height:26px;}
+
+  /* ---------- SCHEDULING SECTION ---------- */
+  .schedule-grid{display:grid; grid-template-columns:1fr 1fr; gap:32px; align-items:center; max-width:1000px; margin:0 auto;}
+  @media (max-width:860px){ .schedule-grid{grid-template-columns:1fr; gap:24px;} }
+  .schedule-card{background:var(--white); border:1px solid var(--line); border-radius:var(--radius); padding:28px;}
+  @media (max-width:640px){ .schedule-card{padding:20px;} }
+  .schedule-card h3{font-size:1.4rem; margin-bottom:16px; color:var(--ink);}
+  @media (max-width:640px){ .schedule-card h3{font-size:1.15rem;} }
+  .schedule-card p{color:var(--slate); margin-bottom:20px; font-size:0.95rem; line-height:1.6;}
+  .schedule-list{list-style:none; margin-bottom:24px;}
+  .schedule-list li{margin-bottom:10px; display:flex; gap:10px; align-items:flex-start;}
+  @media (max-width:640px){ .schedule-list li{margin-bottom:8px;} }
+  .schedule-list li span:first-child{color:var(--amber); font-weight:700; flex-shrink:0;}
+  .schedule-list li span:last-child{color:var(--slate); font-size:0.92rem;}
+  @media (max-width:640px){ .schedule-list li span:last-child{font-size:0.88rem;} }
+  .schedule-cta{background:var(--white); border:2px solid var(--amber); border-radius:var(--radius); padding:28px; position:relative;}
+  @media (max-width:640px){ .schedule-cta{padding:20px;} }
+  .schedule-cta .badge{position:absolute; top:-14px; left:20px; background:var(--white); padding:0 8px;}
+  @media (max-width:640px){ .schedule-cta .badge{top:-12px; left:12px;} }
+  .schedule-cta .badge span{background:var(--amber); color:var(--white); padding:4px 12px; border-radius:999px; font-size:0.75rem; font-weight:700; text-transform:uppercase; letter-spacing:0.05em;}
+  .schedule-cta h3{font-size:1.4rem; margin-bottom:20px; color:var(--ink); margin-top:12px;}
+  @media (max-width:640px){ .schedule-cta h3{font-size:1.15rem; margin-bottom:16px;} }
+  .schedule-box{background:var(--paper-dim); padding:16px; border-radius:12px; margin-bottom:20px;}
+  @media (max-width:640px){ .schedule-box{padding:14px;} }
+  .schedule-box p{font-size:0.9rem; margin-bottom:8px; color:var(--slate);}
+  @media (max-width:640px){ .schedule-box p{font-size:0.85rem;} }
+  .schedule-box .availability{color:var(--ink); font-size:0.95rem; margin-bottom:12px; font-weight:600;}
+  @media (max-width:640px){ .schedule-box .availability{font-size:0.9rem;} }
+  .schedule-box .info{color:var(--slate); font-size:0.85rem;}
+  .schedule-btn{width:100%; text-align:center; justify-content:center; display:flex; align-items:center;}
+  .schedule-phone{color:var(--slate); font-size:0.85rem; text-align:center; margin-top:14px;}
+  @media (max-width:640px){ .schedule-phone{font-size:0.82rem;} }
 </style>
 </head>
 <body>
@@ -728,31 +760,31 @@
       <p>Reparaciones mayores, mantenimiento preventivo, renovaciones y proyectos que requieren coordinación previa.</p>
     </div>
 
-    <div style="display:grid; grid-template-columns:1fr 1fr; gap:32px; align-items:center; max-width:1000px; margin:0 auto;">
+    <div class="schedule-grid">
       <div>
-        <div style="background:var(--white); border:1px solid var(--line); border-radius:var(--radius); padding:28px;">
-          <h3 style="font-size:1.4rem; margin-bottom:16px; color:var(--ink);">Agenda tu proyecto</h3>
-          <p style="color:var(--slate); margin-bottom:20px; font-size:0.95rem; line-height:1.6;">Tenemos disponibilidad para trabajos programados en horario normal de lunes a viernes, 8am a 8pm. Ideal para:</p>
-          <ul style="list-style:none; margin-bottom:24px;">
-            <li style="margin-bottom:10px; display:flex; gap:10px; align-items:flex-start;">
-              <span style="color:var(--amber); font-weight:700; flex-shrink:0;">✓</span>
-              <span style="color:var(--slate); font-size:0.92rem;">Reparaciones mayores y complejas</span>
+        <div class="schedule-card">
+          <h3>Agenda tu proyecto</h3>
+          <p>Tenemos disponibilidad para trabajos programados en horario normal de lunes a viernes, 8am a 8pm. Ideal para:</p>
+          <ul class="schedule-list">
+            <li>
+              <span>✓</span>
+              <span>Reparaciones mayores y complejas</span>
             </li>
-            <li style="margin-bottom:10px; display:flex; gap:10px; align-items:flex-start;">
-              <span style="color:var(--amber); font-weight:700; flex-shrink:0;">✓</span>
-              <span style="color:var(--slate); font-size:0.92rem;">Renovaciones y cambios de infraestructura</span>
+            <li>
+              <span>✓</span>
+              <span>Renovaciones y cambios de infraestructura</span>
             </li>
-            <li style="margin-bottom:10px; display:flex; gap:10px; align-items:flex-start;">
-              <span style="color:var(--amber); font-weight:700; flex-shrink:0;">✓</span>
-              <span style="color:var(--slate); font-size:0.92rem;">Mantenimiento preventivo</span>
+            <li>
+              <span>✓</span>
+              <span>Mantenimiento preventivo</span>
             </li>
-            <li style="margin-bottom:10px; display:flex; gap:10px; align-items:flex-start;">
-              <span style="color:var(--amber); font-weight:700; flex-shrink:0;">✓</span>
-              <span style="color:var(--slate); font-size:0.92rem;">Proyectos que requieren múltiples visitas</span>
+            <li>
+              <span>✓</span>
+              <span>Proyectos que requieren múltiples visitas</span>
             </li>
-            <li style="display:flex; gap:10px; align-items:flex-start;">
-              <span style="color:var(--amber); font-weight:700; flex-shrink:0;">✓</span>
-              <span style="color:var(--slate); font-size:0.92rem;">Presupuestos y cotizaciones sin costo</span>
+            <li>
+              <span>✓</span>
+              <span>Presupuestos y cotizaciones sin costo</span>
             </li>
           </ul>
           <p style="color:var(--slate); font-size:0.85rem; font-style:italic;">Respuesta en 24-48 horas con disponibilidad y confirmación de fecha.</p>
@@ -760,18 +792,18 @@
       </div>
 
       <div>
-        <div style="background:var(--white); border:2px solid var(--amber); border-radius:var(--radius); padding:28px; position:relative;">
-          <div style="position:absolute; top:-14px; left:20px; background:var(--white); padding:0 8px;">
-            <span style="background:var(--amber); color:var(--white); padding:4px 12px; border-radius:999px; font-size:0.75rem; font-weight:700; text-transform:uppercase; letter-spacing:0.05em;">Horario flexible</span>
+        <div class="schedule-cta">
+          <div class="badge">
+            <span>Horario flexible</span>
           </div>
-          <h3 style="font-size:1.4rem; margin-bottom:20px; color:var(--ink); margin-top:12px;">Solicita tu cita</h3>
-          <div style="background:var(--paper-dim); padding:16px; border-radius:12px; margin-bottom:20px;">
-            <p style="color:var(--slate); font-size:0.9rem; margin-bottom:8px;"><strong>Disponibilidad:</strong></p>
-            <p style="color:var(--ink); font-size:0.95rem; margin-bottom:12px; font-weight:600;">Lunes a viernes: 8am – 8pm</p>
-            <p style="color:var(--slate); font-size:0.85rem;">Contáctanos por WhatsApp para coordinar fechas disponibles en tu zona.</p>
+          <h3>Solicita tu cita</h3>
+          <div class="schedule-box">
+            <p><strong>Disponibilidad:</strong></p>
+            <p class="availability">Lunes a viernes: 8am – 8pm</p>
+            <p class="info">Contáctanos por WhatsApp para coordinar fechas disponibles en tu zona.</p>
           </div>
-          <a class="btn btn-primary" href="https://wa.me/525660773953?text=Hola%2C%20quisiera%20agendar%20un%20trabajo%20no%20urgente" target="_blank" rel="noopener" style="width:100%; text-align:center; justify-content:center;">Agendar por WhatsApp</a>
-          <p style="color:var(--slate); font-size:0.85rem; text-align:center; margin-top:14px;">O llama al <strong>566 077 3953</strong></p>
+          <a class="btn btn-primary schedule-btn" href="https://wa.me/525660773953?text=Hola%2C%20quisiera%20agendar%20un%20trabajo%20no%20urgente" target="_blank" rel="noopener">Agendar por WhatsApp</a>
+          <p class="schedule-phone">O llama al <strong>566 077 3953</strong></p>
         </div>
       </div>
     </div>
