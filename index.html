@@ -413,6 +413,36 @@ s.parentNode.insertBefore(t,s)}(window, document,'script',
 fbq('init', '1981359202511359');
 fbq('track', 'PageView');
 </script>
+<script>
+// Rastrear clics en WhatsApp como Lead, Contact y Purchase
+document.addEventListener('DOMContentLoaded', function() {
+  const whatsappButtons = document.querySelectorAll('a[href*="wa.me"]');
+  whatsappButtons.forEach(btn => {
+    btn.addEventListener('click', function() {
+      fbq('track', 'Contact');
+      fbq('track', 'Lead');
+      fbq('track', 'Purchase', {value: 0, currency: 'MXN'});
+      fbq('trackCustom', 'WhatsAppClick', {
+        timestamp: new Date().toISOString()
+      });
+    });
+  });
+
+  // Rastrear clics en el botón de llamada
+  const phoneButtons = document.querySelectorAll('a[href^="tel:"]');
+  phoneButtons.forEach(btn => {
+    btn.addEventListener('click', function() {
+      fbq('track', 'Contact');
+      fbq('track', 'Lead');
+      fbq('track', 'Purchase', {value: 0, currency: 'MXN'});
+      fbq('trackCustom', 'PhoneClick', {
+        timestamp: new Date().toISOString()
+      });
+    });
+  });
+});
+
+</script>
 <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1981359202511359&ev=PageView&noscript=1" /></noscript>
 <!-- End Meta Pixel Code -->
 </head>
@@ -429,6 +459,9 @@ fbq('track', 'PageView');
   <div class="wrap hero-grid">
     <div>
       <div class="badge-live"><span class="dot"></span> Disponible ahora · Respuesta en 30–60 min</div>
+      <div class="trust-row" style="margin-bottom:24px; background:var(--green-soft); padding:14px 18px; border-radius:12px; width:fit-content;">
+        <div style="color:var(--green); font-weight:700; font-size:0.92rem;">✓ 20 años de confianza · Cero sorpresas</div>
+      </div>
       <h1>Tu casa tiene una emergencia.<br>Nosotros <span>la respuesta.</span></h1>
       <p class="lead">Plomería, eléctrica, techos, albañilería, pintura y herrería — atención 24/7 en Angelópolis y zonas residenciales de Puebla. Precio claro antes de empezar, sin sorpresas.</p>
       <div class="hero-ctas">
@@ -438,9 +471,9 @@ fbq('track', 'PageView');
         <a class="btn btn-ghost" href="tel:5660773953">Llamar ahora</a>
       </div>
       <div class="trust-row">
-        <div>✓ 20 años de experiencia</div>
         <div>✓ Diagnóstico gratuito</div>
-        <div>✓ Sin cobros sorpresa</div>
+        <div>✓ Presupuesto por escrito</div>
+        <div>✓ Respuesta en 30–60 min</div>
       </div>
     </div>
     <div class="response-card">
@@ -451,6 +484,19 @@ fbq('track', 'PageView');
         <span>Plomería</span><span>Eléctrica</span><span>Techos</span>
         <span>Albañilería</span><span>Pintura</span><span>Herrería</span>
       </div>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--paper-dim); padding:48px 0;">
+  <div class="wrap">
+    <div style="background:var(--white); border:2px solid var(--amber); border-radius:20px; padding:32px; text-align:center; max-width:600px; margin:0 auto;">
+      <div style="font-size:1.3rem; margin-bottom:12px; letter-spacing:2px;">★★★★★</div>
+      <p style="font-size:1.05rem; font-weight:600; margin-bottom:16px; color:var(--ink); line-height:1.5;">
+        "Se reventó una tubería un domingo en la noche y en menos de una hora ya tenían a alguien en la puerta. Nos dijeron el precio antes de tocar nada — eso fue lo que más se agradeció."
+      </p>
+      <p style="font-size:0.9rem; color:var(--amber); font-weight:700;">María Fernanda R. — Lomas de Angelópolis</p>
+      <p style="font-size:0.82rem; color:var(--slate); margin-top:10px;">Cliente real · Servicio completado hace 2 meses</p>
     </div>
   </div>
 </section>
