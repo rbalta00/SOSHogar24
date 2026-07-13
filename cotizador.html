@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Cotizador interno — SOSHogar24</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#10213B;
+    --ink-soft:#1B3358;
+    --paper:#FBF8F3;
+    --paper-dim:#F1ECE2;
+    --amber:#E8590C;
+    --amber-soft:#FCE7D9;
+    --slate:#48566B;
+    --green:#2F6F4E;
+    --green-soft:#E4F1E9;
+    --line:#DCD4C4;
+    --white:#FFFFFF;
+    --radius:14px;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    font-family:'Inter', sans-serif;
+    background:var(--paper-dim);
+    color:var(--ink);
+    line-height:1.5;
+    padding-bottom:60px;
+  }
+  h1,h2,h3{font-family:'Space Grotesk', sans-serif; letter-spacing:-0.01em;}
+  .mono{font-family:'JetBrains Mono', monospace;}
+  .wrap{max-width:640px; margin:0 auto; padding:0 16px;}
+
+  header{
+    background:var(--ink); color:var(--paper);
+    padding:20px 0; margin-bottom:20px;
+  }
+  header .wrap{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;}
+  header h1{font-size:1.15rem;}
+  header .tag{font-size:0.72rem; color:#9FB0C9; font-family:'JetBrains Mono', monospace;}
+
+  .card{
+    background:var(--white); border:1px solid var(--line); border-radius:var(--radius);
+    padding:20px; margin-bottom:16px;
+  }
+  .card h2{font-size:0.95rem; margin-bottom:14px; color:var(--amber); text-transform:uppercase; letter-spacing:0.05em; font-family:'JetBrains Mono', monospace;}
+
+  label{display:block; font-size:0.85rem; font-weight:600; margin-bottom:6px;}
+  input[type=text], input[type=tel], input[type=number], select, textarea{
+    width:100%; padding:11px 12px; border:1px solid var(--line); border-radius:10px;
+    font-size:0.95rem; font-family:inherit; background:var(--paper); color:var(--ink);
+    margin-bottom:14px;
+  }
+  textarea{resize:vertical; min-height:64px;}
+  .row{display:grid; grid-template-columns:1fr 1fr; gap:12px;}
+  @media (max-width:480px){ .row{grid-template-columns:1fr;} }
+
+  .item-row{display:grid; grid-template-columns:1fr 110px auto; gap:8px; align-items:start; margin-bottom:10px;}
+  @media (max-width:480px){ .item-row{grid-template-columns:1fr 90px auto;} }
+  .item-row input{margin-bottom:0;}
+  .btn-remove{
+    background:none; border:1px solid var(--line); border-radius:8px; color:var(--slate);
+    width:42px; height:42px; cursor:pointer; font-size:1rem; flex-shrink:0;
+  }
+  .btn-add{
+    background:var(--paper-dim); border:1px dashed var(--line); border-radius:10px;
+    padding:10px; width:100%; cursor:pointer; font-weight:600; font-size:0.88rem; color:var(--slate);
+    margin-top:4px;
+  }
+  .btn-add:hover{border-color:var(--amber); color:var(--amber);}
+
+  .totals{background:var(--paper-dim); border-radius:12px; padding:16px; font-family:'JetBrains Mono', monospace; font-size:0.88rem;}
+  .totals .line{display:flex; justify-content:space-between; padding:4px 0;}
+  .totals .total{font-size:1.15rem; font-weight:700; color:var(--amber); border-top:1px dashed var(--line); margin-top:8px; padding-top:10px;}
+
+  .checkbox-row{display:flex; align-items:center; gap:8px; margin-bottom:14px; font-size:0.88rem;}
+  .checkbox-row input{width:auto; margin:0;}
+
+  .preview{
+    background:var(--ink); color:#E9EEF6; border-radius:12px; padding:16px;
+    font-family:'JetBrains Mono', monospace; font-size:0.8rem; white-space:pre-wrap;
+    line-height:1.6; max-height:340px; overflow-y:auto;
+  }
+
+  .actions{display:flex; gap:10px; flex-wrap:wrap; margin-top:14px;}
+  .btn{
+    flex:1; min-width:150px; text-align:center; padding:14px 18px; border-radius:999px;
+    font-weight:700; font-size:0.92rem; border:none; cursor:pointer;
+    display:inline-flex; align-items:center; justify-content:center; gap:8px;
+  }
+  .btn-primary{background:var(--amber); color:var(--white);}
+  .btn-ghost{background:var(--white); color:var(--ink); border:1.5px solid var(--ink);}
+  .btn:active{transform:scale(0.98);}
+  .hint{font-size:0.78rem; color:var(--slate); margin-top:8px;}
+  .copied{color:var(--green); font-weight:700;}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <h1>🧾 Cotizador interno — SOSHogar24</h1>
+    <span class="tag">Solo para técnicos — no es parte del sitio público</span>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <div class="card">
+    <h2>Datos del cliente</h2>
+    <label for="cliente-nombre">Nombre del cliente</label>
+    <input type="text" id="cliente-nombre" placeholder="Ej. María Fernanda R.">
+    <label for="cliente-tel">WhatsApp del cliente (10 dígitos)</label>
+    <input type="tel" id="cliente-tel" placeholder="Ej. 2221234567" maxlength="10">
+    <label for="cliente-zona">Zona / dirección (opcional)</label>
+    <input type="text" id="cliente-zona" placeholder="Ej. Lomas de Angelópolis">
+  </div>
+
+  <div class="card">
+    <h2>Servicio</h2>
+    <div class="row">
+      <div>
+        <label for="servicio">Tipo de servicio</label>
+        <select id="servicio">
+          <option value="Plomería">🚰 Plomería</option>
+          <option value="Eléctrica">⚡ Eléctrica</option>
+          <option value="Techos">🏠 Techos</option>
+          <option value="Pintura">🎨 Pintura</option>
+          <option value="Albañilería">🧱 Albañilería</option>
+          <option value="Herrería y cerrajería">🔧 Herrería y cerrajería</option>
+          <option value="Cambio de cerraduras">🔒 Cambio de cerraduras</option>
+          <option value="Paneles solares">🔆 Paneles solares</option>
+          <option value="Jardinería">🌱 Jardinería</option>
+          <option value="Otro">🛠️ Otro</option>
+        </select>
+      </div>
+      <div>
+        <label for="horario">Horario de la visita</label>
+        <select id="horario">
+          <option value="entre_semana_dia" data-precio="500">☀️ Entre semana · Día (8am-6pm) · $500</option>
+          <option value="entre_semana_noche" data-precio="600">🌙 Entre semana · Noche (6pm-10pm) · $600</option>
+          <option value="fin_semana_dia" data-precio="550">☀️ Fin de semana · Día (8am-6pm) · $550</option>
+          <option value="fin_semana_noche" data-precio="650">🌙 Fin de semana · Noche (6pm-10pm) · $650</option>
+        </select>
+      </div>
+    </div>
+    <label for="diagnostico">Diagnóstico / descripción del problema</label>
+    <textarea id="diagnostico" placeholder="Ej. Fuga en tubería bajo el lavabo, se requiere cambio de conexión y sellado."></textarea>
+  </div>
+
+  <div class="card">
+    <h2>Presupuesto</h2>
+    <label for="visita-precio">Tarifa de visita / diagnóstico ($)</label>
+    <input type="number" id="visita-precio" value="500" min="0" step="1">
+
+    <label>Materiales y conceptos adicionales</label>
+    <div id="items-list"></div>
+    <button type="button" class="btn-add" onclick="agregarItem()">+ Agregar concepto</button>
+
+    <div class="checkbox-row" style="margin-top:16px;">
+      <input type="checkbox" id="descuento-check" onchange="toggleDescuento()">
+      <label for="descuento-check" style="margin:0;">Aplicar oferta de bienvenida (10% de descuento)</label>
+    </div>
+    <div id="descuento-custom-wrap" style="display:none;">
+      <label for="descuento-pct">Descuento personalizado (%)</label>
+      <input type="number" id="descuento-pct" value="0" min="0" max="100" step="1">
+    </div>
+
+    <label for="notas">Notas adicionales (opcional)</label>
+    <textarea id="notas" placeholder="Ej. Garantía de 30 días en mano de obra."></textarea>
+
+    <div class="totals" id="totales"></div>
+  </div>
+
+  <div class="card">
+    <h2>Vista previa del mensaje</h2>
+    <div class="preview" id="preview"></div>
+    <div class="actions">
+      <button type="button" class="btn btn-primary" onclick="enviarWhatsApp()">💬 Enviar por WhatsApp</button>
+      <button type="button" class="btn btn-ghost" onclick="copiarTexto()">📋 Copiar texto</button>
+    </div>
+    <p class="hint" id="copy-hint">Si capturas el WhatsApp del cliente, el mensaje se abre directo en su chat. Si lo dejas vacío, WhatsApp te pedirá elegir el contacto.</p>
+  </div>
+
+</div>
+
+<script>
+let itemCount = 0;
+
+function agregarItem(desc = '', precio = '') {
+  itemCount++;
+  const id = 'item-' + itemCount;
+  const div = document.createElement('div');
+  div.className = 'item-row';
+  div.id = id;
+  div.innerHTML = `
+    <input type="text" placeholder="Ej. Válvula de 1/2 pulgada" value="${desc}" oninput="actualizar()">
+    <input type="number" placeholder="$" min="0" step="1" value="${precio}" oninput="actualizar()">
+    <button type="button" class="btn-remove" onclick="document.getElementById('${id}').remove(); actualizar();">✕</button>
+  `;
+  document.getElementById('items-list').appendChild(div);
+  actualizar();
+}
+
+function toggleDescuento() {
+  const checked = document.getElementById('descuento-check').checked;
+  document.getElementById('descuento-custom-wrap').style.display = checked ? 'none' : 'block';
+  actualizar();
+}
+
+document.getElementById('horario').addEventListener('change', function() {
+  const opt = this.options[this.selectedIndex];
+  document.getElementById('visita-precio').value = opt.dataset.precio;
+  actualizar();
+});
+
+function getItems() {
+  return Array.from(document.querySelectorAll('#items-list .item-row')).map(row => {
+    const inputs = row.querySelectorAll('input');
+    return { desc: inputs[0].value.trim(), precio: parseFloat(inputs[1].value) || 0 };
+  }).filter(i => i.desc || i.precio);
+}
+
+function calcular() {
+  const visita = parseFloat(document.getElementById('visita-precio').value) || 0;
+  const items = getItems();
+  const itemsTotal = items.reduce((sum, i) => sum + i.precio, 0);
+  const subtotal = visita + itemsTotal;
+
+  const descuentoCheck = document.getElementById('descuento-check').checked;
+  const pct = descuentoCheck ? 10 : (parseFloat(document.getElementById('descuento-pct').value) || 0);
+  const descuentoMonto = subtotal * (pct / 100);
+  const total = subtotal - descuentoMonto;
+
+  return { visita, items, subtotal, pct, descuentoMonto, total };
+}
+
+function fmt(n) {
+  return '$' + n.toLocaleString('es-MX', { maximumFractionDigits: 0 });
+}
+
+function actualizar() {
+  const { visita, items, subtotal, pct, descuentoMonto, total } = calcular();
+
+  let totalsHtml = `<div class="line"><span>Tarifa de visita</span><span>${fmt(visita)}</span></div>`;
+  items.forEach(i => {
+    totalsHtml += `<div class="line"><span>${i.desc || 'Concepto'}</span><span>${fmt(i.precio)}</span></div>`;
+  });
+  totalsHtml += `<div class="line"><span>Subtotal</span><span>${fmt(subtotal)}</span></div>`;
+  if (pct > 0) {
+    totalsHtml += `<div class="line"><span>Descuento (${pct}%)</span><span>-${fmt(descuentoMonto)}</span></div>`;
+  }
+  totalsHtml += `<div class="line total"><span>Total</span><span>${fmt(total)}</span></div>`;
+  document.getElementById('totales').innerHTML = totalsHtml;
+
+  document.getElementById('preview').textContent = construirMensaje();
+}
+
+function construirMensaje() {
+  const nombre = document.getElementById('cliente-nombre').value.trim() || 'Cliente';
+  const zona = document.getElementById('cliente-zona').value.trim();
+  const servicio = document.getElementById('servicio').value;
+  const diagnostico = document.getElementById('diagnostico').value.trim();
+  const notas = document.getElementById('notas').value.trim();
+  const fecha = new Date().toLocaleDateString('es-MX', { day: 'numeric', month: 'long', year: 'numeric' });
+  const { visita, items, subtotal, pct, descuentoMonto, total } = calcular();
+
+  let msg = `🧾 *SOSHogar24 — Presupuesto por escrito*\n\n`;
+  msg += `Cliente: ${nombre}\n`;
+  if (zona) msg += `Zona: ${zona}\n`;
+  msg += `Servicio: ${servicio}\n`;
+  msg += `Fecha: ${fecha}\n\n`;
+
+  if (diagnostico) {
+    msg += `*Diagnóstico:*\n${diagnostico}\n\n`;
+  }
+
+  msg += `*Detalle:*\n`;
+  msg += `- Visita / diagnóstico: ${fmt(visita)}\n`;
+  items.forEach(i => {
+    msg += `- ${i.desc || 'Concepto'}: ${fmt(i.precio)}\n`;
+  });
+  msg += `Subtotal: ${fmt(subtotal)}\n`;
+  if (pct > 0) {
+    msg += `Descuento (${pct}%): -${fmt(descuentoMonto)}\n`;
+  }
+  msg += `\n*Total: ${fmt(total)} MXN*\n\n`;
+
+  if (notas) {
+    msg += `${notas}\n\n`;
+  }
+
+  msg += `✓ Precio fijo — nada se cobra sin tu autorización.\n`;
+  msg += `✓ Garantía en mano de obra.\n\n`;
+  msg += `SOSHogar24 · 566 077 3953`;
+
+  return msg;
+}
+
+function enviarWhatsApp() {
+  const mensaje = construirMensaje();
+  const tel = document.getElementById('cliente-tel').value.replace(/\D/g, '');
+  let url;
+  if (tel.length === 10) {
+    url = `https://wa.me/52${tel}?text=${encodeURIComponent(mensaje)}`;
+  } else {
+    url = `https://api.whatsapp.com/send?text=${encodeURIComponent(mensaje)}`;
+  }
+  window.open(url, '_blank');
+}
+
+function copiarTexto() {
+  const mensaje = construirMensaje();
+  navigator.clipboard.writeText(mensaje).then(() => {
+    const hint = document.getElementById('copy-hint');
+    const original = hint.textContent;
+    hint.innerHTML = '<span class="copied">✓ Texto copiado al portapapeles</span>';
+    setTimeout(() => { hint.textContent = original; }, 2500);
+  });
+}
+
+// Inputs que afectan el mensaje
+['cliente-nombre', 'cliente-zona', 'servicio', 'diagnostico', 'notas', 'visita-precio', 'descuento-pct'].forEach(id => {
+  document.getElementById(id).addEventListener('input', actualizar);
+});
+document.getElementById('servicio').addEventListener('change', actualizar);
+
+// Estado inicial
+agregarItem();
+actualizar();
+</script>
+
+</body>
+</html>
