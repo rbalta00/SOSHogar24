@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SOSHogar24 — Emergencias residenciales en Puebla, respuesta en 30-60 min</title>
-<meta name="description" content="Plomería, eléctrica, techos, albañilería, pintura, herrería y paneles solares (instalación y mantenimiento) de emergencia en Angelópolis y zonas residenciales de Puebla. Respuesta en 30-60 minutos, 24/7. Precio claro antes de empezar.">
+<title>SOSHogar24 — Trabajos del hogar agendados, resueltos rápido en Puebla</title>
+<meta name="description" content="Eléctrica, plomería, reparaciones, instalaciones y servicios generales en Angelópolis y zonas residenciales de Puebla. Agenda tu cita, precio fijo desde $500. Cualquier trabajo del hogar, resuelto rápido.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
@@ -433,33 +433,6 @@ fbq('track', 'PageView');
 <script src="https://code.tidio.co/a3b8c9d0e8f7g6h5i4j3k2l1.js" async></script>
 
 <script>
-// Calculadora de presupuesto
-function calcularPresupuesto() {
-  const servicio = document.getElementById('tipo-servicio').value;
-  const turno = document.getElementById('turno').value;
-  
-  const precios = {
-    entre_semana_dia: 500,
-    entre_semana_noche: 600,
-    fin_semana_dia: 550,
-    fin_semana_noche: 650,
-  };
-
-  if (servicio && precios[turno]) {
-    const precio = precios[turno];
-    const resultado = document.getElementById('resultado-presupuesto');
-    resultado.innerHTML = `
-      <div style="background:var(--green-soft); color:var(--green); padding:20px; border-radius:14px; text-align:center;">
-        <p style="font-size:0.9rem; margin-bottom:8px; color:var(--slate);">Presupuesto estimado (tarifa de visita)</p>
-        <p style="font-size:2.2rem; font-weight:700; margin:0;">$${precio.toLocaleString('es-MX')}</p>
-        <p style="font-size:0.82rem; color:var(--slate); margin-top:8px;">+ materiales según necesidad</p>
-        <a class="btn btn-primary" href="https://wa.me/525660773953?text=Hola%2C%20me%20interesa%20presupuesto%20por%20${servicio}" target="_blank" rel="noopener" style="margin-top:16px; width:100%; justify-content:center;">Obtener presupuesto definitivo</a>
-      </div>
-    `;
-  }
-}
-</script>
-<script>
 // Rastrear clics en WhatsApp como Lead, Contact y Purchase
 document.addEventListener('DOMContentLoaded', function() {
   const whatsappButtons = document.querySelectorAll('a[href*="wa.me"]');
@@ -497,31 +470,31 @@ document.addEventListener('DOMContentLoaded', function() {
 <header>
   <div class="header-inner">
     <div class="logo"><span class="dot"></span> SOSHogar24</div>
-    <a class="btn btn-primary" href="https://wa.me/525660773953?text=Hola%2C%20tengo%20una%20emergencia%20en%20casa" target="_blank" rel="noopener">✓ Respuesta en 30–60 min</a>
+    <a class="btn btn-primary" href="https://wa.me/525660773953?text=Hola%2C%20quiero%20agendar%20un%20trabajo%20en%20mi%20casa" target="_blank" rel="noopener">📅 Agendar mi trabajo</a>
   </div>
 </header>
 
 <section class="hero">
   <div class="wrap hero-grid">
     <div>
-      <div class="badge-live"><span class="dot"></span> Disponible ahora · Respuesta en 30–60 min</div>
+      <div class="badge-live"><span class="dot"></span> Agenda disponible esta semana</div>
       <div class="trust-row" style="margin-bottom:24px; background:var(--green-soft); padding:14px 18px; border-radius:12px; width:fit-content;">
-        <div style="color:var(--green); font-weight:700; font-size:0.92rem;">✓ 20 años de confianza · Cero sorpresas</div>
+        <div style="color:var(--green); font-weight:700; font-size:0.92rem;">✓ 20 años de confianza · Precio fijo desde el inicio</div>
       </div>
-      <h1>Tu casa tiene una emergencia.<br><span>Nosotros</span> somos tu garantía.</h1>
-      <p class="lead"><strong>Pequeño trabajo o emergencia — comienza hoy con diagnóstico gratis.</strong> Plomería, eléctrica, techos, albañilería, pintura, herrería y paneles solares (instalación y mantenimiento) — 24/7 en Angelópolis. 20 años construyendo relaciones que escalan.</p>
+      <h1>Tus trabajos del hogar,<br><span>resueltos</span> en horas.</h1>
+      <p class="lead"><strong>Desde cambiar un foco hasta reparar una fuga.</strong> Trabajos rápidos desde $500, precio fijo. Eléctrica, plomería, reparaciones varias, instalaciones y servicios generales — agenda el día y la hora que mejor te acomode.</p>
       <div class="hero-ctas">
-        <a class="btn btn-primary" href="https://wa.me/525660773953?text=Hola%2C%20tengo%20una%20emergencia%20en%20casa" target="_blank" rel="noopener">
-          ✓ Técnico en 30–60 min · WhatsApp
+        <a class="btn btn-primary" href="https://wa.me/525660773953?text=Hola%2C%20quiero%20agendar%20un%20trabajo%20en%20mi%20casa" target="_blank" rel="noopener">
+          📅 Agendar mi trabajo
         </a>
         <a class="btn btn-ghost" href="tel:5660773953">O llamar: 566 077 3953</a>
       </div>
       <div style="margin-top:20px; padding:16px; background:var(--amber-soft); border:2px solid var(--amber); border-radius:12px; text-align:center;">
-        <p style="font-size:0.85rem; color:var(--amber); font-weight:700; margin:0;">🎁 OFERTA: Diagnóstico $0 — Presupuesto por escrito antes de empezar</p>
+        <p style="font-size:0.85rem; color:var(--amber); font-weight:700; margin:0;">🎁 OFERTA: 10% de descuento en tu primer trabajo agendado</p>
       </div>
 
       <div style="margin-top:24px; padding:20px; background:var(--paper-dim); border-radius:16px; border-left:4px solid var(--green);">
-        <p style="font-size:0.75rem; text-transform:uppercase; letter-spacing:0.08em; color:var(--amber); font-weight:700; margin-bottom:8px;">✓ Garantías que respaldan</p>
+        <p style="font-size:0.75rem; text-transform:uppercase; letter-spacing:0.08em; color:var(--amber); font-weight:700; margin-bottom:8px;">✓ Así trabajamos</p>
         <ul style="list-style:none; padding:0; margin:0;">
           <li style="display:flex; gap:8px; align-items:center; margin-bottom:8px; font-size:0.9rem;"><span style="color:var(--green); font-weight:700;">✓</span> <span>Precio fijo antes de empezar</span></li>
           <li style="display:flex; gap:8px; align-items:center; margin-bottom:8px; font-size:0.9rem;"><span style="color:var(--green); font-weight:700;">✓</span> <span>Sin cobros ocultos ni sorpresas</span></li>
@@ -539,26 +512,26 @@ document.addEventListener('DOMContentLoaded', function() {
           <img src="assets/pintura-1.jpeg" alt="Pintor dando acabado en fachada" style="width:100%; height:100%; object-fit:cover;">
         </div>
         <div style="padding:12px 16px; background:var(--amber); text-align:center;">
-          <p style="font-size:0.8rem; color:var(--white); margin:0; font-weight:600;">📸 Así trabajamos en campo — 30-60 min de respuesta</p>
+          <p style="font-size:0.8rem; color:var(--white); margin:0; font-weight:600;">📸 Así trabajamos en campo — agenda tu día y hora</p>
         </div>
       </div>
 
       <!-- Response Card Mejorada -->
       <div class="response-card">
-        <div class="label">✓ GARANTIZADO: Tiempo de respuesta</div>
-        <div class="time">30–60<span> min</span></div>
-        <div class="sub">Técnico certificado en tu domicilio, todos los días del año — sin sorpresas</div>
+        <div class="label">✓ PRECIO FIJO: Trabajos rápidos</div>
+        <div class="time">$500<span> desde</span></div>
+        <div class="sub">Agenda el día y la hora que te acomode — precio fijo antes de empezar, sin sorpresas</div>
         <div style="background:rgba(255,255,255,0.06); padding:12px; border-radius:12px; margin-bottom:14px; border:1px solid rgba(232,89,12,0.3);">
-          <p style="font-size:0.7rem; text-transform:uppercase; letter-spacing:0.08em; color:var(--amber); font-weight:700; margin-bottom:6px;">📍 Cobertura garantizada:</p>
+          <p style="font-size:0.7rem; text-transform:uppercase; letter-spacing:0.08em; color:var(--amber); font-weight:700; margin-bottom:6px;">📍 Zona de cobertura:</p>
           <p style="font-size:0.82rem; color:var(--paper); margin:0; line-height:1.5;">Angelópolis · Lomas · Cholula · Cuautlancingo</p>
-          <p style="font-size:0.72rem; color:#9FB0C9; margin:8px 0 0 0; line-height:1.4;">30–60 min en la zona cercana a nuestra base; hasta 90 min en los extremos más alejados del corredor.</p>
+          <p style="font-size:0.72rem; color:#9FB0C9; margin:8px 0 0 0; line-height:1.4;">Para otras zonas de Puebla, escríbenos y confirmamos disponibilidad.</p>
         </div>
         <div class="services" style="margin-bottom:14px;">
-          <span>Plomería</span><span>Eléctrica</span><span>Techos</span>
-          <span>Albañilería</span><span>Pintura</span><span>Herrería</span><span>Paneles solares</span>
+          <span>Eléctrica</span><span>Plomería</span><span>Reparaciones varias</span>
+          <span>Instalaciones</span><span>Servicios generales</span>
         </div>
         <div style="background:rgba(255,255,255,0.08); padding:12px; border-radius:10px; font-size:0.78rem; color:#C7D2E3; border:1px solid rgba(255,255,255,0.12); line-height:1.6;">
-          ✓ Diagnóstico $0<br>✓ Presupuesto por escrito<br>✓ Garantía en mano de obra
+          ✓ Agenda el día y hora<br>✓ Precio fijo desde el inicio<br>✓ Garantía en mano de obra
         </div>
       </div>
 
@@ -571,12 +544,12 @@ document.addEventListener('DOMContentLoaded', function() {
             <div style="position:absolute; bottom:0; left:0; right:0; background:linear-gradient(to top,rgba(16,33,59,0.8),transparent); padding:6px; color:var(--white); font-size:0.65rem; font-weight:600;">Eléctrica</div>
           </div>
           <div style="position:relative; overflow:hidden; border-radius:10px; border:1px solid var(--line); aspect-ratio:1;">
-            <img src="assets/techo-1.jpeg" alt="Impermeabilización" style="width:100%; height:100%; object-fit:cover;">
-            <div style="position:absolute; bottom:0; left:0; right:0; background:linear-gradient(to top,rgba(16,33,59,0.8),transparent); padding:6px; color:var(--white); font-size:0.65rem; font-weight:600;">Techos</div>
+            <img src="assets/techo-1.jpeg" alt="Instalación / mantenimiento" style="width:100%; height:100%; object-fit:cover;">
+            <div style="position:absolute; bottom:0; left:0; right:0; background:linear-gradient(to top,rgba(16,33,59,0.8),transparent); padding:6px; color:var(--white); font-size:0.65rem; font-weight:600;">Instalaciones</div>
           </div>
           <div style="position:relative; overflow:hidden; border-radius:10px; border:1px solid var(--line); aspect-ratio:1;">
-            <img src="assets/pintura-1.jpeg" alt="Trabajo de pintura" style="width:100%; height:100%; object-fit:cover;">
-            <div style="position:absolute; bottom:0; left:0; right:0; background:linear-gradient(to top,rgba(16,33,59,0.8),transparent); padding:6px; color:var(--white); font-size:0.65rem; font-weight:600;">Pintura</div>
+            <img src="assets/pintura-1.jpeg" alt="Trabajo de mantenimiento" style="width:100%; height:100%; object-fit:cover;">
+            <div style="position:absolute; bottom:0; left:0; right:0; background:linear-gradient(to top,rgba(16,33,59,0.8),transparent); padding:6px; color:var(--white); font-size:0.65rem; font-weight:600;">Generales</div>
           </div>
         </div>
         <p style="font-size:0.7rem; color:var(--amber); margin:8px 0 0 0; font-weight:600;">✓ Fotos reales de nuestro equipo — no son de stock</p>
@@ -590,7 +563,7 @@ document.addEventListener('DOMContentLoaded', function() {
     <div style="background:var(--white); border:2px solid var(--amber); border-radius:20px; padding:32px; text-align:center; max-width:600px; margin:0 auto;">
       <div style="font-size:1.3rem; margin-bottom:12px; letter-spacing:2px;">★★★★★</div>
       <p style="font-size:1.05rem; font-weight:600; margin-bottom:16px; color:var(--ink); line-height:1.5;">
-        "Se reventó una tubería un domingo en la noche y en menos de una hora ya tenían a alguien en la puerta. Nos dijeron el precio antes de tocar nada — eso fue lo que más se agradeció."
+        "Agendé para un sábado en la mañana y llegaron puntuales, con el precio ya acordado desde el WhatsApp. En menos de dos horas ya estaba resuelto, sin sorpresas en el cobro."
       </p>
       <p style="font-size:0.9rem; color:var(--amber); font-weight:700;">María Fernanda R. — Lomas de Angelópolis</p>
       <p style="font-size:0.82rem; color:var(--slate); margin-top:10px;">Cliente real · Servicio completado hace 2 meses</p>
@@ -598,111 +571,52 @@ document.addEventListener('DOMContentLoaded', function() {
   </div>
 </section>
 
-<section id="emergencias">
+<section id="servicios">
   <div class="wrap">
     <div class="section-head">
-      <div class="eyebrow">Reconoces esto</div>
-      <h2>Las emergencias más comunes que resolvemos</h2>
-      <p>Si te está pasando algo de esto ahora mismo, es justo lo que atendemos en la primera visita.</p>
+      <div class="eyebrow">Cualquier trabajo, agendado</div>
+      <h2>Trabajos rápidos que resolvemos todos los días</h2>
+      <p>Desde algo tan sencillo como cambiar un foco hasta reparar una fuga — agenda el día y la hora, y lo resolvemos con precio fijo.</p>
     </div>
     <div class="em-grid">
-
-      <div class="em-card">
-        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c3 4 6 7 6 11a6 6 0 0 1-12 0c0-4 3-7 6-11z"/></svg></div>
-        <p>Tubería reventada o fuga que no puedes cerrar</p>
-      </div>
 
       <div class="em-card">
         <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h7l-1 8 11-14h-7l1-6z"/></svg></div>
-        <p>Corto circuito o apagón total en la casa</p>
+        <p><strong>Eléctrica</strong><br>Contactos, luz que no prende, cortocircuito</p>
       </div>
 
       <div class="em-card">
-        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 13c1 2 2 3 4 3s3-1 4-3"/></svg></div>
-        <p>Baño tapado o desbordado</p>
-      </div>
-
-      <div class="em-card">
-        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c4 0 7-3 7-6 0-4-7-12-7-12s-7 8-7 12c0 3 3 6 7 6z"/></svg></div>
-        <p>Boiler sin funcionar — agua fría todo el día</p>
-      </div>
-
-      <div class="em-card">
-        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12l9-8 9 8"/><path d="M5 10v10h14V10"/><path d="M9 20v-4h6v4"/></svg></div>
-        <p>Gotera o filtración de agua en el techo</p>
-      </div>
-
-      <div class="em-card">
-        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M7 12h10"/></svg></div>
-        <p>Contacto o apagador quemado / chispeando</p>
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c3 4 6 7 6 11a6 6 0 0 1-12 0c0-4 3-7 6-11z"/></svg></div>
+        <p><strong>Plomería</strong><br>Fugas, drenajes tapados</p>
       </div>
 
       <div class="em-card">
         <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
-        <p>Chapa o portón que no cierra (seguridad)</p>
-      </div>
-
-      <div class="em-card">
-        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"/></svg></div>
-        <p>Fuga oculta o aumento sospechoso en el recibo de agua</p>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<section style="background:var(--white); border-top:1px solid var(--line); border-bottom:1px solid var(--line);">
-  <div class="wrap">
-    <div class="section-head">
-      <div class="eyebrow">La puerta de entrada</div>
-      <h2>Reparaciones pequeñas → Proyectos completos</h2>
-      <p>Comienza con lo urgente (grifo que gotea, cerradura dañada, jardín descuidado) — y después, cuando necesites más, ya nos conoces. 20 años construyendo clientes de por vida, no solo ventas.</p>
-    </div>
-    <div class="em-grid">
-
-      <div class="em-card">
-        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
-        <p>Cambio de cerraduras / Llaves maestras</p>
-        <p style="font-size:0.7rem; color:var(--amber); font-weight:700; margin-top:6px;">24/7 · Emergencia frecuente</p>
-      </div>
-
-      <div class="em-card">
-        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="12" rx="2"/><line x1="17" y1="17" x2="17" y2="20"/><line x1="7" y1="20" x2="17" y2="20"/><line x1="7" y1="17" x2="7" y2="20"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
-        <p>Reparación de puertas / Marcos / Bisagras</p>
-        <p style="font-size:0.7rem; color:var(--amber); font-weight:700; margin-top:6px;">Escalada a seguridad</p>
-      </div>
-
-      <div class="em-card">
-        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="12" rx="1"/><path d="M3 12h18M9 6v12M15 6v12"/></svg></div>
-        <p>Mantenimiento a paneles solares</p>
-        <p style="font-size:0.7rem; color:var(--amber); font-weight:700; margin-top:6px;">Servicio especializado</p>
+        <p><strong>Reparaciones Varias</strong><br>Cerraduras, bisagras, vidrios</p>
       </div>
 
       <div class="em-card">
         <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="21" x2="4" y2="3"/><line x1="20" y1="21" x2="20" y2="3"/><line x1="1" y1="9" x2="23" y2="9"/><line x1="1" y1="15" x2="23" y2="15"/></svg></div>
-        <p>Instalación o cambio de cortinas / Persianas</p>
-        <p style="font-size:0.7rem; color:var(--amber); font-weight:700; margin-top:6px;">Accesible y rápido</p>
+        <p><strong>Instalaciones</strong><br>Repisas, bases para TV, perchas</p>
       </div>
 
       <div class="em-card">
         <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="2" rx="1"/><path d="M4 6v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6"/><path d="M9 11l1 2 3-6"/></svg></div>
-        <p>Ajustes y mantenimiento preventivo</p>
-        <p style="font-size:0.7rem; color:var(--amber); font-weight:700; margin-top:6px;">Evita emergencias</p>
+        <p><strong>Servicios Generales</strong><br>Limpiezas puntuales, ventanas</p>
       </div>
 
       <div class="em-card">
-        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22V12"/><path d="M12 12c0-4 3-7 7-7 0 4-3 7-7 7z"/><path d="M12 15c0-3-2.5-5-6-5 0 3 2.5 5 6 5z"/></svg></div>
-        <p>Jardinería y mantenimiento de áreas verdes</p>
-        <p style="font-size:0.7rem; color:var(--amber); font-weight:700; margin-top:6px;">Servicio adicional</p>
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12h8M12 8v8"/></svg></div>
+        <p><strong>Cualquier otra reparación rápida</strong><br>¿No lo ves aquí? Pregúntanos, seguro lo resolvemos</p>
       </div>
 
     </div>
 
     <div style="margin-top:40px; padding:32px; background:var(--amber-soft); border:2px solid var(--amber); border-radius:20px; text-align:center;">
-      <h3 style="font-size:1.2rem; color:var(--amber); margin-bottom:12px;">🚀 Comienza aquí — Sin compromiso</h3>
-      <p style="color:var(--slate); margin-bottom:20px; max-width:500px; margin-left:auto; margin-right:auto;">Llama para tu reparación pequeña ($0 diagnóstico) y descubre por qué 500+ clientes volverían con nosotros para proyectos mayores.</p>
+      <h3 style="font-size:1.2rem; color:var(--amber); margin-bottom:12px;">🚀 Agenda tu trabajo — Sin compromiso</h3>
+      <p style="color:var(--slate); margin-bottom:20px; max-width:500px; margin-left:auto; margin-right:auto;">Cuéntanos qué necesitas y te confirmamos precio fijo y disponibilidad antes de agendar.</p>
       <div style="display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
-        <a class="btn btn-primary" href="https://wa.me/525660773953?text=Hola%2C%20tengo%20una%20reparaci%C3%B3n%20peque%C3%B1a" target="_blank" rel="noopener">Solicitar diagnóstico gratis</a>
+        <a class="btn btn-primary" href="https://wa.me/525660773953?text=Hola%2C%20quiero%20agendar%20un%20trabajo%20en%20mi%20casa" target="_blank" rel="noopener">Agendar mi trabajo</a>
         <a class="btn btn-ghost" href="tel:5660773953">Llamar: 566 077 3953</a>
       </div>
     </div>
@@ -713,53 +627,40 @@ document.addEventListener('DOMContentLoaded', function() {
   <div class="wrap">
     <div class="section-head">
       <div class="eyebrow">Por qué confiar en SOSHogar24</div>
-      <h2>Comenzamos con pequeños trabajos, escalamos a relaciones de largo plazo</h2>
-      <p>20 años probando que con confianza probada, los clientes vuelven — no para reparar lo mismo, sino para ampliar sus proyectos.</p>
+      <h2>Lo fácil, rápido y accesible que debería ser arreglar algo en casa</h2>
+      <p>20 años de experiencia resolviendo cualquier tipo de trabajo del hogar, con precio fijo desde el inicio.</p>
     </div>
     <div class="feat-grid">
       <div class="feat-card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/></svg></div>
+        <h4>Agenda el día y hora</h4>
+        <p>Tú eliges cuándo — sin esperar todo el día a que llegue el técnico</p>
+      </div>
+      <div class="feat-card">
         <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
-        <h4>Respuesta en 30–60 min</h4>
-        <p>Técnico en tu domicilio antes de que el problema empeore, cualquier día del año</p>
+        <h4>Trabajos resueltos rápido</h4>
+        <p>La mayoría de los trabajos se resuelven en la misma visita</p>
       </div>
       <div class="feat-card">
         <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.4 8.7 8 10 4.6-1.3 8-5 8-10V6l-8-4z"/></svg></div>
-        <h4>Precio por escrito, antes de empezar</h4>
-        <p>Sin cobros sorpresa: apruebas el presupuesto antes de cualquier reparación</p>
-      </div>
-      <div class="feat-card">
-        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21c4-3 8-6.5 8-11a8 8 0 0 0-16 0c0 4.5 4 8 8 11z"/><circle cx="12" cy="10" r="3"/></svg></div>
-        <h4>Enfocados en tu zona</h4>
-        <p>Corredor Periférico Ecológico: Angelópolis, Lomas de Angelópolis, Cholula y Cuautlancingo</p>
-      </div>
-      <div class="feat-card">
-        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 12 2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg></div>
-        <h4>20 años de experiencia</h4>
-        <p>Al mando de Rodolfo Serrano, técnico responsable de cada servicio</p>
+        <h4>Precio fijo desde el inicio</h4>
+        <p>Sin cobros sorpresa: sabes cuánto vas a pagar antes de empezar</p>
       </div>
       <div class="feat-card">
         <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M4 9h16"/></svg></div>
-        <h4>7 especialidades, un solo contacto</h4>
-        <p>Plomería, eléctrica, techos, albañilería, pintura, herrería y paneles solares</p>
+        <h4>Cualquier tipo de reparación</h4>
+        <p>Eléctrica, plomería, instalaciones, reparaciones y servicios generales</p>
+      </div>
+      <div class="feat-card">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 12 2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg></div>
+        <h4>Profesionales confiables</h4>
+        <p>Al mando de Rodolfo Serrano, técnico responsable de cada servicio — 20 años de experiencia</p>
       </div>
       <div class="feat-card">
         <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
         <h4>Contacto directo por WhatsApp</h4>
         <p>Sin formularios largos ni esperar una llamada — respondemos al instante</p>
       </div>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="wrap">
-    <div class="banner-247">
-      <div class="left">
-        <div class="num">24<span>Horas</span></div>
-        <div class="num">/7<span>Días</span></div>
-      </div>
-      <p>Las emergencias no avisan. Por eso SOSHogar24 atiende de noche, fines de semana y días festivos, sin recargos ocultos.</p>
-      <a class="btn btn-ghost" href="https://wa.me/525660773953?text=Hola%2C%20tengo%20una%20emergencia%20en%20casa" target="_blank" rel="noopener">Escribir ahora</a>
     </div>
   </div>
 </section>
@@ -784,80 +685,36 @@ document.addEventListener('DOMContentLoaded', function() {
   </div>
 </section>
 
-<section style="background:var(--ink); color:var(--paper); padding:56px 0;">
-  <div class="wrap">
-    <div class="section-head" style="margin-left:auto; margin-right:auto; text-align:center; color:var(--paper); margin-bottom:40px;">
-      <div class="eyebrow" style="color:var(--amber);">Transparencia total</div>
-      <h2>Calcula tu presupuesto ahora — sin sorpresas</h2>
-      <p style="color:#C7D2E3;">Selecciona el servicio y el turno, y te mostramos el rango de tarifa</p>
-    </div>
-    <div style="background:var(--ink-soft); padding:40px; border-radius:20px; max-width:600px; margin:0 auto; border:1px solid rgba(232,89,12,0.2);">
-      <div style="margin-bottom:24px;">
-        <label style="display:block; font-weight:600; margin-bottom:8px; color:var(--paper);">¿Qué necesitas reparar?</label>
-        <select id="tipo-servicio" onchange="calcularPresupuesto()" style="width:100%; padding:12px; border:1px solid var(--line); border-radius:10px; font-size:0.95rem; background:var(--paper); color:var(--ink); font-family:inherit;">
-          <option value="">Selecciona un servicio...</option>
-          <option value="plomeria">🚰 Plomería (fugas, destapes, boiler)</option>
-          <option value="electricidad">⚡ Eléctrica (contactos, cortos, apagones)</option>
-          <option value="techo">🏠 Techos (goteras, impermeabilización)</option>
-          <option value="pintura">🎨 Pintura (interior/exterior)</option>
-          <option value="albanileria">🧱 Albañilería (resanes, muros)</option>
-          <option value="herreria">🔧 Herrería y cerrajería</option>
-          <option value="cerraduras">🔒 Cambio de cerraduras</option>
-          <option value="paneles_solares">🔆 Paneles solares (instalación/mantenimiento)</option>
-          <option value="jardineria">🌱 Jardinería y áreas verdes</option>
-        </select>
-      </div>
-      <div style="margin-bottom:24px;">
-        <label style="display:block; font-weight:600; margin-bottom:8px; color:var(--paper);">¿A qué hora?</label>
-        <select id="turno" onchange="calcularPresupuesto()" style="width:100%; padding:12px; border:1px solid var(--line); border-radius:10px; font-size:0.95rem; background:var(--paper); color:var(--ink); font-family:inherit;">
-          <option value="">Selecciona horario...</option>
-          <option value="entre_semana_dia">☀️ Entre semana · Día (8am-6pm) · $500</option>
-          <option value="entre_semana_noche">🌙 Entre semana · Noche (6pm-10pm) · $600</option>
-          <option value="fin_semana_dia">☀️ Fin de semana · Día (8am-6pm) · $550</option>
-          <option value="fin_semana_noche">🌙 Fin de semana · Noche (6pm-10pm) · $650</option>
-        </select>
-      </div>
-      <div id="resultado-presupuesto">
-        <p style="text-align:center; color:#9FB0C9; font-size:0.9rem;">Selecciona servicio y horario para ver presupuesto</p>
-      </div>
-    </div>
-  </div>
-</section>
-
 <section>
   <div class="wrap">
     <div class="section-head">
       <div class="eyebrow">Precio claro, sin letras chiquitas</div>
       <h2>Sabes cuánto vas a pagar antes de que lleguemos</h2>
-      <p>Diagnóstico gratuito, presupuesto por escrito antes de iniciar cualquier reparación. Tú decides si continuamos.</p>
+      <p>Precio fijo para trabajos rápidos. Si tu trabajo es más grande, te damos una cotización por separado antes de empezar.</p>
     </div>
 
     <div class="pricing-wrap">
       <div class="receipt">
         <div class="receipt-head">
           <strong>SOSHOGAR24</strong>
-          <span>TARIFA · VISITA</span>
+          <span>PRECIO · REFERENCIA</span>
         </div>
-        <div class="receipt-row"><span class="name">Diagnóstico</span><span class="price">$0</span></div>
-        <div class="receipt-row"><span class="name">Entre semana · Día (8am–6pm)</span><span class="price">$500</span></div>
-        <div class="receipt-row"><span class="name">Entre semana · Noche (6pm–10pm)</span><span class="price">$600</span></div>
-        <div class="receipt-row"><span class="name">Fin de semana · Día (8am–6pm)</span><span class="price">$550</span></div>
-        <div class="receipt-row"><span class="name">Fin de semana · Noche (6pm–10pm)</span><span class="price">$650</span></div>
-        <div class="receipt-note">* Tarifa de visita cubre diagnóstico + contención inmediata del problema. Materiales y alcance mayor se cotizan por escrito antes de continuar.</div>
+        <div class="receipt-row"><span class="name">Cambiar contactos / apagadores</span><span class="price">$500</span></div>
+        <div class="receipt-row"><span class="name">Destapar drenaje</span><span class="price">$500</span></div>
+        <div class="receipt-row"><span class="name">Instalar repisa / base para TV</span><span class="price">$500</span></div>
+        <div class="receipt-row"><span class="name">Reparar cerradura / bisagra</span><span class="price">$500</span></div>
+        <div class="receipt-row"><span class="name">Limpieza puntual / ventanas</span><span class="price">$500</span></div>
+        <div class="receipt-note">* Precio fijo del trabajo rápido, no incluye materiales. Trabajos más grandes o complejos se cotizan por separado antes de empezar.</div>
       </div>
 
       <div class="tier-cards">
-        <div class="tier-card">
-          <div><h4>Diagnóstico gratuito</h4><p>Evaluamos el problema y te damos precio fijo antes de tocar nada</p></div>
-          <span class="tag">$0</span>
-        </div>
         <div class="tier-card highlight">
-          <div><h4>Reparación estándar</h4><p>Fugas menores, destapes, contactos, boiler — lo más común</p></div>
-          <span class="tag">$500–1,800</span>
+          <div><h4>Trabajos rápidos</h4><p>Eléctrica, plomería, reparaciones, instalaciones y servicios generales — lo más común</p></div>
+          <span class="tag">Desde $500</span>
         </div>
         <div class="tier-card">
-          <div><h4>Reparación completa</h4><p>Tramos de tubería, instalaciones mayores, impermeabilización</p></div>
-          <span class="tag">Desde $3,000</span>
+          <div><h4>Trabajos complejos</h4><p>Instalaciones mayores, renovaciones o proyectos que requieren varias visitas</p></div>
+          <span class="tag">Se cotiza aparte</span>
         </div>
       </div>
 
@@ -872,7 +729,7 @@ document.addEventListener('DOMContentLoaded', function() {
       <div class="shield"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.4 8.7 8 10 4.6-1.3 8-5 8-10V6l-8-4z"/><path d="m9 12 2 2 4-4"/></svg></div>
       <div>
         <h3>✓ Garantía de confianza — Sin sorpresas</h3>
-        <p>El diagnóstico es gratis y la tarifa se fija por escrito antes de tocar nada. Si el problema requiere mayor alcance, te mostramos el nuevo presupuesto — tú decides si continuamos. <strong>Nada se cobra sin tu autorización expresa.</strong> 20 años de historial en la zona.</p>
+        <p>El precio se fija antes de empezar. Si tu trabajo resulta más complejo de lo esperado, te mostramos la cotización aparte — tú decides si continuamos. <strong>Nada se cobra sin tu autorización expresa.</strong> 20 años de historial en la zona.</p>
       </div>
     </div>
   </div>
@@ -887,23 +744,23 @@ document.addEventListener('DOMContentLoaded', function() {
     <div class="process-grid">
       <div class="process-step">
         <span class="num">01</span>
-        <h4>Escríbenos</h4>
-        <p>Por WhatsApp o llamada, cuéntanos qué pasa</p>
+        <h4>Agenda</h4>
+        <p>Por WhatsApp, cuéntanos qué necesitas y elige el día y la hora</p>
       </div>
       <div class="process-step">
         <span class="num">02</span>
         <h4>Confirmamos</h4>
-        <p>Te decimos hora estimada de llegada, sin espera indefinida</p>
+        <p>Te confirmamos precio fijo y horario de llegada</p>
       </div>
       <div class="process-step">
         <span class="num">03</span>
-        <h4>Diagnosticamos</h4>
-        <p>Evaluamos en sitio y te damos el precio por escrito</p>
+        <h4>Llega el profesional</h4>
+        <p>A la hora acordada, listo para resolver tu trabajo</p>
       </div>
       <div class="process-step">
         <span class="num">04</span>
-        <h4>Resolvemos</h4>
-        <p>Reparamos con garantía, tú apruebas antes de pagar</p>
+        <h4>Resuelto</h4>
+        <p>Trabajo terminado con garantía, precio ya acordado desde el inicio</p>
       </div>
     </div>
   </div>
@@ -916,7 +773,7 @@ document.addEventListener('DOMContentLoaded', function() {
       <div>
         <h3>Rodolfo Serrano</h3>
         <div class="role">Técnico responsable · 20 años de experiencia</div>
-        <p>Al frente de cada servicio de SOSHogar24, con dos décadas resolviendo emergencias residenciales en Puebla — de fugas nocturnas a fallas eléctricas en plena reunión familiar.</p>
+        <p>Al frente de cada servicio de SOSHogar24, con dos décadas resolviendo trabajos del hogar en Puebla — de instalaciones eléctricas a reparaciones que la mayoría no sabe a quién pedirle ayuda.</p>
       </div>
     </div>
   </div>
@@ -933,19 +790,19 @@ document.addEventListener('DOMContentLoaded', function() {
 
       <div class="testimonial">
         <div class="stars">★★★★★</div>
-        <p class="quote">"Se reventó una tubería un domingo en la noche y en menos de una hora ya tenían a alguien en la puerta. Nos dijeron el precio antes de tocar nada — eso fue lo que más se agradeció."</p>
+        <p class="quote">"Agendé para un sábado en la mañana y llegaron puntuales, con el precio ya acordado desde el WhatsApp. En menos de dos horas ya estaba resuelto, sin sorpresas en el cobro."</p>
         <div class="author">María Fernanda R. — Lomas de Angelópolis</div>
       </div>
 
       <div class="testimonial">
         <div class="stars">★★★★★</div>
-        <p class="quote">"Se fue la luz de toda la casa un viernes en la noche y en menos de 40 minutos ya tenía al técnico revisando el cuadro eléctrico. Muy profesionales y puntuales."</p>
+        <p class="quote">"Agendé para instalar unas repisas y cambiar unos contactos el mismo día. Llegaron a la hora acordada y terminaron todo en una sola visita. Muy profesionales y puntuales."</p>
         <div class="author">Jorge A. — Privada La Vista</div>
       </div>
 
       <div class="testimonial">
         <div class="stars">★★★★★</div>
-        <p class="quote">"Contraté el diagnóstico gratis para una gotera en el techo y terminé haciendo la impermeabilización completa. El precio se cumplió tal cual como me lo dijeron, sin sorpresas."</p>
+        <p class="quote">"Pedí un presupuesto para una fuga pequeña y me lo dieron por WhatsApp antes de agendar. El precio se cumplió tal cual como me lo dijeron, sin sorpresas."</p>
         <div class="author">Claudia P. — Zavaleta</div>
       </div>
 
@@ -961,19 +818,19 @@ document.addEventListener('DOMContentLoaded', function() {
     </div>
     <div class="testi-grid" style="max-width:100%; margin-bottom:56px;">
       <div class="testimonial" style="background:var(--white); border:2px solid var(--green); text-align:center; padding:40px 24px;">
-        <div style="font-size:2.4rem; margin-bottom:12px;">🛡️</div>
-        <h4 style="font-size:1rem; margin-bottom:8px;">Diagnóstico $0</h4>
-        <p style="font-size:0.87rem; color:var(--slate); line-height:1.6;">Sin costo, sin compromiso. Evaluamos el problema y te damos presupuesto fijo antes de cualquier trabajo.</p>
+        <div style="font-size:2.4rem; margin-bottom:12px;">📅</div>
+        <h4 style="font-size:1rem; margin-bottom:8px;">Agenda flexible</h4>
+        <p style="font-size:0.87rem; color:var(--slate); line-height:1.6;">Tú eliges el día y la hora que mejor te acomode, no al revés.</p>
       </div>
       <div class="testimonial" style="background:var(--white); border:2px solid var(--green); text-align:center; padding:40px 24px;">
         <div style="font-size:2.4rem; margin-bottom:12px;">✓</div>
-        <h4 style="font-size:1rem; margin-bottom:8px;">Presupuesto por escrito</h4>
+        <h4 style="font-size:1rem; margin-bottom:8px;">Precio fijo desde $500</h4>
         <p style="font-size:0.87rem; color:var(--slate); line-height:1.6;">Nada se toca sin tu autorización. Si hay cambios, te lo mostramos primero — tú decides.</p>
       </div>
       <div class="testimonial" style="background:var(--white); border:2px solid var(--green); text-align:center; padding:40px 24px;">
-        <div style="font-size:2.4rem; margin-bottom:12px;">⏱️</div>
-        <h4 style="font-size:1rem; margin-bottom:8px;">30–60 min · Garantizado</h4>
-        <p style="font-size:0.87rem; color:var(--slate); line-height:1.6;">Respuesta en Angelópolis todos los días, todos los horarios. Técnico certificado en tu puerta.</p>
+        <div style="font-size:2.4rem; margin-bottom:12px;">🔧</div>
+        <h4 style="font-size:1rem; margin-bottom:8px;">Cualquier tipo de trabajo</h4>
+        <p style="font-size:0.87rem; color:var(--slate); line-height:1.6;">Eléctrica, plomería, reparaciones, instalaciones y servicios generales — un solo contacto.</p>
       </div>
     </div>
 
@@ -985,34 +842,34 @@ document.addEventListener('DOMContentLoaded', function() {
 
       <div class="faq-item">
         <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
-          ¿Realmente llegan en 30-60 minutos?
+          ¿Puedo elegir el día y la hora de mi cita?
           <span class="plus">+</span>
         </div>
-        <div class="faq-a"><p>Sí, ese es nuestro tiempo estándar de respuesta dentro de Angelópolis y zonas residenciales cercanas a nuestra base. En los extremos más alejados del corredor (por ejemplo, Cuautlancingo) puede extenderse hasta 90 minutos según tráfico. Siempre te confirmamos una hora estimada apenas escribes.</p></div>
+        <div class="faq-a"><p>Sí, ese es justo el modelo: nos escribes por WhatsApp, nos dices qué necesitas y coordinamos el día y horario que mejor te acomode.</p></div>
       </div>
 
       <div class="faq-item">
         <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
-          ¿El diagnóstico realmente es gratis?
+          ¿El precio desde $500 incluye materiales?
           <span class="plus">+</span>
         </div>
-        <div class="faq-a"><p>Sí. La visita de diagnóstico no tiene costo. Solo pagas si decides continuar con la reparación, y siempre te mostramos el precio por escrito antes de iniciar.</p></div>
+        <div class="faq-a"><p>No. El precio desde $500 cubre la mano de obra del trabajo rápido. Si tu trabajo requiere materiales (piezas, refacciones, etc.), te lo confirmamos antes de agendar para que no haya sorpresas.</p></div>
       </div>
 
       <div class="faq-item">
         <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
-          ¿Qué pasa si el problema es más grande de lo esperado?
+          ¿Qué pasa si mi trabajo es más grande de lo esperado?
           <span class="plus">+</span>
         </div>
-        <div class="faq-a"><p>Primero contenemos el daño activo (por ejemplo, cerramos una fuga). Después te mostramos el nuevo presupuesto con fotos y explicación clara. Nunca continuamos ni cobramos de más sin tu autorización.</p></div>
+        <div class="faq-a"><p>Si al llegar vemos que el trabajo es más complejo de lo que parecía, te mostramos una cotización aparte con explicación clara antes de continuar. Nunca cobramos de más sin tu autorización.</p></div>
       </div>
 
       <div class="faq-item">
         <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
-          ¿Atienden de verdad los 365 días, incluidas noches y festivos?
+          ¿Qué tipo de trabajos hacen?
           <span class="plus">+</span>
         </div>
-        <div class="faq-a"><p>Sí, SOSHogar24 opera 24/7 todo el año. El horario nocturno y de fin de semana tiene una tarifa distinta (ver sección de precios), pero nunca dejamos de atender.</p></div>
+        <div class="faq-a"><p>Cualquier trabajo rápido del hogar: eléctrica, plomería, reparaciones varias (cerraduras, bisagras, vidrios), instalaciones (repisas, bases para TV, perchas) y servicios generales. Si tienes algo distinto, pregúntanos — seguro lo resolvemos.</p></div>
       </div>
 
       <div class="faq-item">
@@ -1028,7 +885,7 @@ document.addEventListener('DOMContentLoaded', function() {
           ¿Cubren toda la ciudad de Puebla?
           <span class="plus">+</span>
         </div>
-        <div class="faq-a"><p>Nuestro tiempo de respuesta garantizado de 30-60 min cubre la mayor parte del corredor del Periférico Ecológico: desde 14 Sur, Jardines de la Montaña y San Baltazar Campeche, pasando por Angelópolis / Atlixcáyotl y Ciudad Judicial / Lomas de Angelópolis, hasta la Recta a Cholula y Cuautlancingo. En los extremos más alejados de nuestra base (San Isidro Castillotla), como Cuautlancingo, el tiempo puede extenderse hasta 90 minutos según tráfico. Para otras zonas de Puebla, escríbenos y confirmamos disponibilidad y tiempo estimado.</p></div>
+        <div class="faq-a"><p>Cubrimos la mayor parte del corredor del Periférico Ecológico: desde 14 Sur, Jardines de la Montaña y San Baltazar Campeche, pasando por Angelópolis / Atlixcáyotl y Ciudad Judicial / Lomas de Angelópolis, hasta la Recta a Cholula y Cuautlancingo. Para otras zonas de Puebla, escríbenos y confirmamos disponibilidad.</p></div>
       </div>
 
     </div>
@@ -1038,24 +895,24 @@ document.addEventListener('DOMContentLoaded', function() {
 <section style="background:var(--paper-dim);">
   <div class="wrap">
     <div class="section-head" style="margin-left:auto; margin-right:auto; text-align:center; margin-bottom:48px;">
-      <div class="eyebrow">Trabajos programados</div>
-      <h2>¿No es emergencia? Agenda tu trabajo</h2>
-      <p>Reparaciones mayores, mantenimiento preventivo, renovaciones y proyectos que requieren coordinación previa.</p>
+      <div class="eyebrow">Agenda tu cita</div>
+      <h2>Elige el día y la hora que mejor te acomode</h2>
+      <p>Trabajos rápidos, mantenimiento, instalaciones y proyectos que requieren coordinación previa — todo se agenda igual.</p>
     </div>
 
     <div class="schedule-grid">
       <div>
         <div class="schedule-card">
-          <h3>Agenda tu proyecto</h3>
-          <p>Tenemos disponibilidad para trabajos programados en horario normal de lunes a viernes, 8am a 8pm. Ideal para:</p>
+          <h3>Agenda tu trabajo</h3>
+          <p>Tenemos disponibilidad de lunes a viernes, 8am a 8pm. Ideal para:</p>
           <ul class="schedule-list">
             <li>
               <span>✓</span>
-              <span>Reparaciones mayores y complejas</span>
+              <span>Trabajos rápidos del día a día</span>
             </li>
             <li>
               <span>✓</span>
-              <span>Renovaciones y cambios de infraestructura</span>
+              <span>Instalaciones y cambios pequeños</span>
             </li>
             <li>
               <span>✓</span>
@@ -1067,7 +924,7 @@ document.addEventListener('DOMContentLoaded', function() {
             </li>
             <li>
               <span>✓</span>
-              <span>Presupuestos y cotizaciones sin costo</span>
+              <span>Cotizaciones sin costo para trabajos complejos</span>
             </li>
           </ul>
           <p style="color:var(--slate); font-size:0.85rem; font-style:italic;">Respuesta en 24-48 horas con disponibilidad y confirmación de fecha.</p>
@@ -1087,7 +944,7 @@ document.addEventListener('DOMContentLoaded', function() {
           </div>
           <a class="btn btn-primary schedule-btn" href="https://calendly.com/soshogar24/consulta-gratuita" target="_blank" rel="noopener">📅 Agendar por Calendly</a>
           <div style="margin-top:12px; display:flex; flex-direction:column; gap:8px;">
-            <a class="btn btn-primary schedule-btn" href="https://wa.me/525660773953?text=Hola%2C%20quisiera%20agendar%20un%20trabajo%20no%20urgente" target="_blank" rel="noopener" style="background:rgba(232,89,12,0.1); color:var(--amber); border:2px solid var(--amber);">💬 Agendar por WhatsApp</a>
+            <a class="btn btn-primary schedule-btn" href="https://wa.me/525660773953?text=Hola%2C%20quiero%20agendar%20un%20trabajo%20en%20mi%20casa" target="_blank" rel="noopener" style="background:rgba(232,89,12,0.1); color:var(--amber); border:2px solid var(--amber);">💬 Agendar por WhatsApp</a>
           </div>
           <p class="schedule-phone">O llama al <strong>566 077 3953</strong></p>
         </div>
@@ -1099,11 +956,11 @@ document.addEventListener('DOMContentLoaded', function() {
 <section id="contacto">
   <div class="wrap">
     <div class="final-cta">
-      <div class="offer-pill">🎁 Oferta de bienvenida: $0 diagnóstico + 10% descuento</div>
-      <h2>Comienza pequeño, crece con confianza</h2>
-      <p>Llama para tu reparación (pequeña o grande) y descubre por qué 500+ clientes nos llamaron para trabajos aún mayores después.</p>
-      <a class="btn btn-primary" href="https://wa.me/525660773953?text=Hola%2C%20tengo%20una%20emergencia%20en%20casa" target="_blank" rel="noopener">Escríbenos por WhatsApp</a>
-      <div class="phone-mono mono">O llama al 566 077 3953 · Disponible 24/7 · Respuesta en 30–60 min</div>
+      <div class="offer-pill">🎁 Oferta de bienvenida: 10% de descuento en tu primer trabajo agendado</div>
+      <h2>Agenda tu trabajo, resuelto rápido</h2>
+      <p>Cualquier trabajo del hogar, precio fijo desde $500. Descubre por qué 500+ clientes ya confiaron en nosotros.</p>
+      <a class="btn btn-primary" href="https://wa.me/525660773953?text=Hola%2C%20quiero%20agendar%20un%20trabajo%20en%20mi%20casa" target="_blank" rel="noopener">Agendar mi trabajo</a>
+      <div class="phone-mono mono">O llama al 566 077 3953 · Lunes a viernes, 8am–8pm</div>
     </div>
     <div class="map-wrap">
       <iframe src="https://maps.google.com/maps?q=18.977456,-98.270549&hl=es&z=16&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Ubicación SOSHogar24" style="min-height:320px; background:var(--paper-dim);"></iframe>
@@ -1119,7 +976,7 @@ document.addEventListener('DOMContentLoaded', function() {
     <div class="footer-grid">
       <div>
         <h5>SOSHogar24</h5>
-        <p>Emergencias residenciales 24/7 en Angelópolis y zonas privadas de Puebla. Plomería, eléctrica, techos, albañilería, pintura, herrería y paneles solares.</p>
+        <p>Trabajos del hogar agendados en Angelópolis y zonas residenciales de Puebla. Eléctrica, plomería, reparaciones, instalaciones y servicios generales — precio fijo desde $500.</p>
       </div>
       <div>
         <h5>Contacto</h5>
@@ -1160,9 +1017,9 @@ document.addEventListener('DOMContentLoaded', function() {
 <div class="legal-modal" id="modal-terminos">
   <div class="box">
     <h3>Términos del servicio</h3>
-    <p><strong>Diagnóstico y presupuesto:</strong> la visita de diagnóstico es gratuita. El presupuesto de reparación se entrega por escrito (WhatsApp) antes de iniciar cualquier trabajo y requiere tu autorización expresa para proceder.</p>
-    <p><strong>Tarifas de emergencia:</strong> las tarifas mostradas en esta página son de referencia y pueden variar según horario, día de la semana, complejidad del problema y materiales requeridos. El precio final siempre se confirma antes de ejecutar el trabajo.</p>
-    <p><strong>Sin cobros sorpresa:</strong> si durante el diagnóstico se detecta que el alcance del trabajo es mayor al estimado inicialmente, se te presentará el nuevo presupuesto antes de continuar. No se realizará ningún cargo adicional sin tu aprobación.</p>
+    <p><strong>Precio fijo y cotización:</strong> los trabajos rápidos tienen un precio fijo desde $500 (no incluye materiales), confirmado por WhatsApp antes de agendar tu cita. Los trabajos complejos se cotizan por separado y requieren tu autorización expresa para proceder.</p>
+    <p><strong>Precios de referencia:</strong> las tarifas mostradas en esta página son de referencia y pueden variar según complejidad del trabajo y materiales requeridos. El precio final siempre se confirma antes de ejecutar el trabajo.</p>
+    <p><strong>Sin cobros sorpresa:</strong> si al llegar se detecta que el alcance del trabajo es mayor al estimado inicialmente, se te presentará el nuevo presupuesto antes de continuar. No se realizará ningún cargo adicional sin tu aprobación.</p>
     <p><strong>Garantía:</strong> los trabajos realizados cuentan con garantía sobre la mano de obra; el periodo específico se indica en tu comprobante de servicio.</p>
     <p><strong>Cancelaciones:</strong> puedes cancelar la visita sin costo antes de que el técnico sea despachado. Si el técnico ya se encuentra en camino, puede aplicar un cargo por desplazamiento.</p>
     <p><strong>Oferta de bienvenida:</strong> el descuento de bienvenida aplica una vez por domicilio y no es acumulable con otras promociones.</p>
@@ -1170,7 +1027,7 @@ document.addEventListener('DOMContentLoaded', function() {
   </div>
 </div>
 
-<a class="float-wa" href="https://wa.me/525660773953?text=Hola%2C%20tengo%20una%20emergencia%20en%20casa" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp" title="Respuesta en 30-60 min">
+<a class="float-wa" href="https://wa.me/525660773953?text=Hola%2C%20quiero%20agendar%20un%20trabajo%20en%20mi%20casa" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp" title="Agenda tu trabajo">
   <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.7.44 3.36 1.29 4.83L2.05 22l5.42-1.42a9.87 9.87 0 0 0 4.57 1.16h.01c5.46 0 9.9-4.45 9.9-9.91C21.96 6.45 17.5 2 12.04 2zm0 18.15h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.11.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.55 3.7-8.25 8.26-8.25a8.2 8.2 0 0 1 5.84 2.42 8.18 8.18 0 0 1 2.41 5.83c0 4.55-3.71 8.24-8.27 8.24zm4.53-6.18c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.17.24-.64.81-.78.97-.14.17-.29.19-.53.06-.25-.12-1.04-.38-1.98-1.22-.73-.65-1.23-1.46-1.37-1.7-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.43-.14-.01-.31-.01-.48-.01a.9.9 0 0 0-.66.31c-.23.24-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.68 4.25 3.75.59.26 1.06.41 1.42.53.6.19 1.14.16 1.57.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.08.14-1.18-.06-.11-.23-.17-.48-.29z"/></svg>
 </a>
 
