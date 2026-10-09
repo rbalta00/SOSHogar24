@@ -19,3 +19,10 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 - There's no dev server / build — open `index.html` (or `cotizador.html`) directly, or serve the folder with any static file server.
 - Both pages are single self-contained files (inline `<style>`/`<script>`), matching the pattern used across this account's other static-site repos (e.g. `Auria`) — search within the file rather than expecting a `src/` structure.
+
+## Publicar cambios (deploy)
+
+- Repo: `rbalta00/SOSHogar24`, rama `main`. Vercel: proyecto `sos-hogar24` -> https://soshogar24.company (conectado a GitHub).
+- **Auto-deploy**: un `git push` a `main` ya dispara el deploy en Vercel solo, no hace falta correr nada mas.
+- Atajo: `.\deploy.ps1 "mensaje"` en la raiz del repo hace `git add` + `commit` + `push` en un solo paso.
+- Convencion con el usuario: cuando pida "guardar", "subir" o "publicar" este repo, correr el flujo completo sin preguntar el alcance (ver tambien `D:\repos-activos\SETUP.md` si existe esa carpeta).
